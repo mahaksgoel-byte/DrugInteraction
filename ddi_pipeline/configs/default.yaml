@@ -1,0 +1,65 @@
+# DDI Prediction Pipeline — default configuration
+# Every stage in DDI_Pipeline_Architecture.html reads its knobs from here.
+
+seed: 42
+
+paths:
+  raw_dir: data/raw
+  processed_dir: data/processed
+  output_dir: outputs
+
+data:
+  # If real source files are not found under paths.raw_dir, the loaders fall
+  # back to a small synthetic dataset so the whole pipeline is runnable
+  # end-to-end without licensed downloads (DrugBank/PharmGKB require accounts).
+  use_synthetic_fallback: true
+  synthetic_num_drugs: 120
+  synthetic_num_proteins: 60
+  synthetic_num_enzymes: 4
+  synthetic_num_side_effects: 40
+  top_k_side_effects: 200
+  cyp_enzymes: [CYP2D6, CYP3A4, CYP2C19, CYP2C9]
+
+preprocessing:
+  min_sources_required: 2
+  test_size: 0.15
+  val_size: 0.15
+  cold_start_fraction: 0.1   # fraction of drugs held out entirely for the cold-start split
+
+features:
+  drug_embedding_dim: 128     # ChemBERTa=768 / Morgan=1024 in production; small for demo speed
+  morgan_bits: 1024
+  use_morgan_fallback: true
+  side_effect_reduced_dim: 32
+  protein_feature_dim: 32
+
+gnn:
+  hidden_dims: [256, 128, 64]
+  num_relations: 5   # targets, metabolized_by, causes, ppi, interacts_with
+  dropout: 0.2
+  pretrain_epochs: 20
+  pretrain_lr: 0.001
+  mask_rate: 0.15
+
+pooling:
+  bottleneck_dim: 8
+
+classical_head:
+  hidden_dim: 16
+  dropout: 0.2
+  lr: 0.001
+  epochs: 30
+  batch_size: 64
+
+quantum_head:
+  num_qubits: 8
+  ansatz_reps: 3
+  lr: 0.01
+  epochs: 15
+  batch_size: 32
+  backend: aer_simulator_statevector
+
+training:
+  optimizer: adam
+  loss: bce
+  early_stopping_patience: 8

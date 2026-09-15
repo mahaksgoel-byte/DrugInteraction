@@ -1,0 +1,13 @@
+torch>=2.2
+torch-geometric>=2.5
+rdkit>=2023.9.1
+pandas>=2.0
+numpy>=1.26
+scikit-learn>=1.4
+qiskit==1.4.6
+qiskit-machine-learning==0.8.3
+qiskit-aer==0.15.1
+
+pyyaml>=6.0
+requests>=2.31
+tqdm>=4.66
