@@ -1,0 +1,553 @@
+{
+  "schema_version": 1,
+  "generated_on": "2026-10-05",
+  "access_notes": [
+    "DrugBank interaction/target/enzyme tables are not present: download requires the account and academic licence described by plan.md.",
+    "UniChem DrugBank-to-PubChem cross-references are present and are not a substitute for the gated DrugBank interaction dataset.",
+    "PubChem JSON responses are scoped to DDInter cross-reference CIDs, not a whole-database dump.",
+    "DDInter drug_data.json is a supplemental third-party crosswalk export; its provenance is recorded separately from official DDInter category files.",
+    "ClinPGx archives include their own LICENSE.txt files; review those terms before redistribution."
+  ],
+  "files": [
+    {
+      "local_path": "data/raw/ddinter/ddinter_downloads_code_A.csv",
+      "source": "DDInter 2.0",
+      "version": "downloaded 2026-10-05",
+      "downloaded_on": "2026-10-05",
+      "url": "https://ddinter2.scbdd.com/static/media/download/ddinter_downloads_code_A.csv",
+      "size_bytes": 3343434,
+      "sha256": "a22ca451d2b755ca2331886f7e00540c86f555f9f55704a59a19c691251f52e0"
+    },
+    {
+      "local_path": "data/raw/ddinter/ddinter_downloads_code_B.csv",
+      "source": "DDInter 2.0",
+      "version": "downloaded 2026-10-05",
+      "downloaded_on": "2026-10-05",
+      "url": "https://ddinter2.scbdd.com/static/media/download/ddinter_downloads_code_B.csv",
+      "size_bytes": 867726,
+      "sha256": "76de5115a55587f0e822e1096b684fd3ddde058fbefcbb19896df58820ace130"
+    },
+    {
+      "local_path": "data/raw/ddinter/ddinter_downloads_code_D.csv",
+      "source": "DDInter 2.0",
+      "version": "downloaded 2026-10-05",
+      "downloaded_on": "2026-10-05",
+      "url": "https://ddinter2.scbdd.com/static/media/download/ddinter_downloads_code_D.csv",
+      "size_bytes": 1520704,
+      "sha256": "c0627ec39965dbe27829e4934cd20d71eb079f4e373287678737bba9423a306a"
+    },
+    {
+      "local_path": "data/raw/ddinter/ddinter_downloads_code_H.csv",
+      "source": "DDInter 2.0",
+      "version": "downloaded 2026-10-05",
+      "downloaded_on": "2026-10-05",
+      "url": "https://ddinter2.scbdd.com/static/media/download/ddinter_downloads_code_H.csv",
+      "size_bytes": 705088,
+      "sha256": "f0f925f0ba1ee68c4668d3e7a6732719b34623b22a0f5d017f9090e59f63c88e"
+    },
+    {
+      "local_path": "data/raw/ddinter/ddinter_downloads_code_L.csv",
+      "source": "DDInter 2.0",
+      "version": "downloaded 2026-10-05",
+      "downloaded_on": "2026-10-05",
+      "url": "https://ddinter2.scbdd.com/static/media/download/ddinter_downloads_code_L.csv",
+      "size_bytes": 3885702,
+      "sha256": "f54f4486cc00344f8c86508c31c2ca3fad6d1d37ec3af5bcf609b4bbda5507ef"
+    },
+    {
+      "local_path": "data/raw/ddinter/ddinter_downloads_code_P.csv",
+      "source": "DDInter 2.0",
+      "version": "downloaded 2026-10-05",
+      "downloaded_on": "2026-10-05",
+      "url": "https://ddinter2.scbdd.com/static/media/download/ddinter_downloads_code_P.csv",
+      "size_bytes": 317460,
+      "sha256": "83f8c0edb20d09ef29b8500b48f9623e208379525688ade9e70a7df2d8749d55"
+    },
+    {
+      "local_path": "data/raw/ddinter/ddinter_downloads_code_R.csv",
+      "source": "DDInter 2.0",
+      "version": "downloaded 2026-10-05",
+      "downloaded_on": "2026-10-05",
+      "url": "https://ddinter2.scbdd.com/static/media/download/ddinter_downloads_code_R.csv",
+      "size_bytes": 1793766,
+      "sha256": "1c39c3d4a6e41659b7a988538d7f363867592abc6f41a815de8746f6e2150574"
+    },
+    {
+      "local_path": "data/raw/ddinter/ddinter_downloads_code_V.csv",
+      "source": "DDInter 2.0",
+      "version": "downloaded 2026-10-05",
+      "downloaded_on": "2026-10-05",
+      "url": "https://ddinter2.scbdd.com/static/media/download/ddinter_downloads_code_V.csv",
+      "size_bytes": 700777,
+      "sha256": "353973fb300453946aea95733e8fb52338e4b59426d2ce6ca318363d4f84f10a"
+    },
+    {
+      "local_path": "data/raw/ddinter/drug_data.json",
+      "source": "DDInter metadata crosswalk (supplemental Biothings scraper export)",
+      "version": "repository main snapshot retrieved 2026-10-05; underlying DDInter data",
+      "downloaded_on": "2026-10-05",
+      "url": "https://raw.githubusercontent.com/mnarayan1/DDInter/main/drug_data.json",
+      "size_bytes": 163408,
+      "sha256": "cc51f276a7aedefb5b34ffac5b50b01d2d0535f7c7b022cee04dd4bc2df9049f"
+    },
+    {
+      "local_path": "data/raw/pharmgkb/chemicals.zip",
+      "source": "ClinPGx (formerly PharmGKB)",
+      "version": "ClinPGx export retrieved 2026-10-05",
+      "downloaded_on": "2026-10-05",
+      "url": "https://api.clinpgx.org/v1/download/file/data/chemicals.zip",
+      "size_bytes": 816104,
+      "sha256": "11a292c9802e3ce431ada32f0e49a505ea5dacbf38a09ec227e2d4be3afff3d6"
+    },
+    {
+      "local_path": "data/raw/pharmgkb/clinicalAnnotations.zip",
+      "source": "ClinPGx (formerly PharmGKB)",
+      "version": "2025-07-05 export",
+      "downloaded_on": "2026-10-05",
+      "url": "https://api.clinpgx.org/v1/download/file/data/clinicalAnnotations.zip",
+      "size_bytes": 1231768,
+      "sha256": "9c6512c54f3c9321effacb11178fb2ae1c45fa3f1710f08c3c365ee7537ced07"
+    },
+    {
+      "local_path": "data/raw/pharmgkb/drugLabels.zip",
+      "source": "ClinPGx (formerly PharmGKB)",
+      "version": "ClinPGx export retrieved 2026-10-05",
+      "downloaded_on": "2026-10-05",
+      "url": "https://api.clinpgx.org/v1/download/file/data/drugLabels.zip",
+      "size_bytes": 60036,
+      "sha256": "ad892f2a413882d4d0f83e27453c811f79b8cc15e15eb0860b73b5bf0e8a7ef8"
+    },
+    {
+      "local_path": "data/raw/pharmgkb/genes.zip",
+      "source": "ClinPGx (formerly PharmGKB)",
+      "version": "ClinPGx export retrieved 2026-10-05",
+      "downloaded_on": "2026-10-05",
+      "url": "https://api.clinpgx.org/v1/download/file/data/genes.zip",
+      "size_bytes": 2905579,
+      "sha256": "36cda3a7f02f50b9a4c97a3c2d3cdb82a76d028761d8f1e192ac49d90012b428"
+    },
+    {
+      "local_path": "data/raw/pubchem/cid_properties_001.json",
+      "source": "PubChem PUG REST",
+      "version": "API response retrieved 2026-10-05",
+      "downloaded_on": "2026-10-05",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{comma-separated-CIDs}/property/Title,CanonicalSMILES,IsomericSMILES,InChIKey/JSON",
+      "size_bytes": 24564,
+      "sha256": "5baca56afd928322d5e03618893119aec5b798b0783bca84b29395f69529116a"
+    },
+    {
+      "local_path": "data/raw/pubchem/cid_properties_002.json",
+      "source": "PubChem PUG REST",
+      "version": "API response retrieved 2026-10-05",
+      "downloaded_on": "2026-10-05",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{comma-separated-CIDs}/property/Title,CanonicalSMILES,IsomericSMILES,InChIKey/JSON",
+      "size_bytes": 26366,
+      "sha256": "4acbfe55275464dc30568e193bc256213497464251faf9374a445c7c0b1d1795"
+    },
+    {
+      "local_path": "data/raw/pubchem/cid_properties_003.json",
+      "source": "PubChem PUG REST",
+      "version": "API response retrieved 2026-10-05",
+      "downloaded_on": "2026-10-05",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{comma-separated-CIDs}/property/Title,CanonicalSMILES,IsomericSMILES,InChIKey/JSON",
+      "size_bytes": 26459,
+      "sha256": "72acdf114fd2ced83a78ee6e9d136c0a5c1a65ef7f964fd88dfdaab5b3fa2d69"
+    },
+    {
+      "local_path": "data/raw/pubchem/cid_properties_004.json",
+      "source": "PubChem PUG REST",
+      "version": "API response retrieved 2026-10-05",
+      "downloaded_on": "2026-10-05",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{comma-separated-CIDs}/property/Title,CanonicalSMILES,IsomericSMILES,InChIKey/JSON",
+      "size_bytes": 26041,
+      "sha256": "25f24bc0553920e3668907ed52b4e34e38998a4f61616687ea0cf5c73b4ecc47"
+    },
+    {
+      "local_path": "data/raw/pubchem/cid_properties_005.json",
+      "source": "PubChem PUG REST",
+      "version": "API response retrieved 2026-10-05",
+      "downloaded_on": "2026-10-05",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{comma-separated-CIDs}/property/Title,CanonicalSMILES,IsomericSMILES,InChIKey/JSON",
+      "size_bytes": 27596,
+      "sha256": "ff2a9d073ca65e7914574e6341c0af51aa5c74f4db0c42e377cd8e67bfa87030"
+    },
+    {
+      "local_path": "data/raw/pubchem/cid_properties_006.json",
+      "source": "PubChem PUG REST",
+      "version": "API response retrieved 2026-10-05",
+      "downloaded_on": "2026-10-05",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{comma-separated-CIDs}/property/Title,CanonicalSMILES,IsomericSMILES,InChIKey/JSON",
+      "size_bytes": 29065,
+      "sha256": "2c99a5532fa006c5e76d4742c246d0f035d3bfb01a444cd9b72cb921dd2f906d"
+    },
+    {
+      "local_path": "data/raw/pubchem/cid_properties_007.json",
+      "source": "PubChem PUG REST",
+      "version": "API response retrieved 2026-10-05",
+      "downloaded_on": "2026-10-05",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{comma-separated-CIDs}/property/Title,CanonicalSMILES,IsomericSMILES,InChIKey/JSON",
+      "size_bytes": 31437,
+      "sha256": "5862ab6784c17ed7fc6cec8e1e5f5ee4542e48df397b0c2dfe0306e3e4cc0ee5"
+    },
+    {
+      "local_path": "data/raw/pubchem/cid_properties_008.json",
+      "source": "PubChem PUG REST",
+      "version": "API response retrieved 2026-10-05",
+      "downloaded_on": "2026-10-05",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{comma-separated-CIDs}/property/Title,CanonicalSMILES,IsomericSMILES,InChIKey/JSON",
+      "size_bytes": 30066,
+      "sha256": "ba6e72d722e95a1767f52221d6d4c0f987a7be51213a7c4741f91bf1ef026580"
+    },
+    {
+      "local_path": "data/raw/pubchem/cid_properties_009.json",
+      "source": "PubChem PUG REST",
+      "version": "API response retrieved 2026-10-05",
+      "downloaded_on": "2026-10-05",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{comma-separated-CIDs}/property/Title,CanonicalSMILES,IsomericSMILES,InChIKey/JSON",
+      "size_bytes": 30991,
+      "sha256": "16eb2541b7a74df3ec302157b038df78f942ec9652305cd2af376d7c090de06d"
+    },
+    {
+      "local_path": "data/raw/pubchem/cid_properties_010.json",
+      "source": "PubChem PUG REST",
+      "version": "API response retrieved 2026-10-05",
+      "downloaded_on": "2026-10-05",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{comma-separated-CIDs}/property/Title,CanonicalSMILES,IsomericSMILES,InChIKey/JSON",
+      "size_bytes": 31997,
+      "sha256": "385b4c672df98862fc3cb62bbb081054a54258df9a2c969a9e7b26701c8c0f3b"
+    },
+    {
+      "local_path": "data/raw/pubchem/cid_properties_011.json",
+      "source": "PubChem PUG REST",
+      "version": "API response retrieved 2026-10-05",
+      "downloaded_on": "2026-10-05",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{comma-separated-CIDs}/property/Title,CanonicalSMILES,IsomericSMILES,InChIKey/JSON",
+      "size_bytes": 31829,
+      "sha256": "a27012c5f214abb30c7a2fca25790b308a97d32faa76f2a7a0c94883b28f6bab"
+    },
+    {
+      "local_path": "data/raw/pubchem/cid_properties_012.json",
+      "source": "PubChem PUG REST",
+      "version": "API response retrieved 2026-10-05",
+      "downloaded_on": "2026-10-05",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{comma-separated-CIDs}/property/Title,CanonicalSMILES,IsomericSMILES,InChIKey/JSON",
+      "size_bytes": 33160,
+      "sha256": "bac3bfc6880da8b0b3403a0159682a13fec891acb81c82706e4040504198f8a0"
+    },
+    {
+      "local_path": "data/raw/pubchem/cid_properties_013.json",
+      "source": "PubChem PUG REST",
+      "version": "API response retrieved 2026-10-05",
+      "downloaded_on": "2026-10-05",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{comma-separated-CIDs}/property/Title,CanonicalSMILES,IsomericSMILES,InChIKey/JSON",
+      "size_bytes": 37295,
+      "sha256": "598e5c9f5f50a5d2a1ee82ba0d9fa10e48bf2bdcf4a5721bbcabfdba4aa398e7"
+    },
+    {
+      "local_path": "data/raw/pubchem/cid_properties_014.json",
+      "source": "PubChem PUG REST",
+      "version": "API response retrieved 2026-10-05",
+      "downloaded_on": "2026-10-05",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{comma-separated-CIDs}/property/Title,CanonicalSMILES,IsomericSMILES,InChIKey/JSON",
+      "size_bytes": 43959,
+      "sha256": "4206b199472bff89b914e4b77f8cb5f3786d462b9c33370c82951ac9dd1564c7"
+    },
+    {
+      "local_path": "data/raw/pubchem/cid_properties_v2_001.json",
+      "source": "PubChem PUG REST",
+      "version": "API response retrieved 2026-10-05",
+      "downloaded_on": "2026-10-05",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{comma-separated-CIDs}/property/Title,CanonicalSMILES,IsomericSMILES,InChIKey/JSON",
+      "size_bytes": 24512,
+      "sha256": "aa07790c77cf8293ceb9486b56a081403336961f38895e4eeceab91ca354efbc"
+    },
+    {
+      "local_path": "data/raw/pubchem/cid_properties_v2_002.json",
+      "source": "PubChem PUG REST",
+      "version": "API response retrieved 2026-10-05",
+      "downloaded_on": "2026-10-05",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{comma-separated-CIDs}/property/Title,CanonicalSMILES,IsomericSMILES,InChIKey/JSON",
+      "size_bytes": 26459,
+      "sha256": "0494051b16398210e4262ee22c8f26d14454ffa49f88a813db5e2e47a099f828"
+    },
+    {
+      "local_path": "data/raw/pubchem/cid_properties_v2_003.json",
+      "source": "PubChem PUG REST",
+      "version": "API response retrieved 2026-10-05",
+      "downloaded_on": "2026-10-05",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{comma-separated-CIDs}/property/Title,CanonicalSMILES,IsomericSMILES,InChIKey/JSON",
+      "size_bytes": 26359,
+      "sha256": "165f984f39f514522df58f509ce7be9ee0bfd140f6a072b8a5e951498926e984"
+    },
+    {
+      "local_path": "data/raw/pubchem/cid_properties_v2_004.json",
+      "source": "PubChem PUG REST",
+      "version": "API response retrieved 2026-10-05",
+      "downloaded_on": "2026-10-05",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{comma-separated-CIDs}/property/Title,CanonicalSMILES,IsomericSMILES,InChIKey/JSON",
+      "size_bytes": 26149,
+      "sha256": "ed462100712d7dc2c897cdd620c4c6c24cfa09b6c0e6003525635e5da41743bd"
+    },
+    {
+      "local_path": "data/raw/pubchem/cid_properties_v2_005.json",
+      "source": "PubChem PUG REST",
+      "version": "API response retrieved 2026-10-05",
+      "downloaded_on": "2026-10-05",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{comma-separated-CIDs}/property/Title,CanonicalSMILES,IsomericSMILES,InChIKey/JSON",
+      "size_bytes": 26696,
+      "sha256": "dede9cdda82bdbe9e023f27b2d0df94e00f54ec70000991fc5c8d14610b1efc5"
+    },
+    {
+      "local_path": "data/raw/pubchem/cid_properties_v2_006.json",
+      "source": "PubChem PUG REST",
+      "version": "API response retrieved 2026-10-05",
+      "downloaded_on": "2026-10-05",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{comma-separated-CIDs}/property/Title,CanonicalSMILES,IsomericSMILES,InChIKey/JSON",
+      "size_bytes": 28508,
+      "sha256": "577dd3454abbfa7bf60a0eee9b9010b0633e9e494d76acf299f16ffae0f704df"
+    },
+    {
+      "local_path": "data/raw/pubchem/cid_properties_v2_007.json",
+      "source": "PubChem PUG REST",
+      "version": "API response retrieved 2026-10-05",
+      "downloaded_on": "2026-10-05",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{comma-separated-CIDs}/property/Title,CanonicalSMILES,IsomericSMILES,InChIKey/JSON",
+      "size_bytes": 30890,
+      "sha256": "a95c519bac394d59949c720356ff53d2a237444a8cab87434c37c18572a28e0a"
+    },
+    {
+      "local_path": "data/raw/pubchem/cid_properties_v2_008.json",
+      "source": "PubChem PUG REST",
+      "version": "API response retrieved 2026-10-05",
+      "downloaded_on": "2026-10-05",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{comma-separated-CIDs}/property/Title,CanonicalSMILES,IsomericSMILES,InChIKey/JSON",
+      "size_bytes": 29898,
+      "sha256": "d8536e69941dac32cc37fca21946cf2eb7c3e3630e16ef9108ea87b19c39969f"
+    },
+    {
+      "local_path": "data/raw/pubchem/cid_properties_v2_009.json",
+      "source": "PubChem PUG REST",
+      "version": "API response retrieved 2026-10-05",
+      "downloaded_on": "2026-10-05",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{comma-separated-CIDs}/property/Title,CanonicalSMILES,IsomericSMILES,InChIKey/JSON",
+      "size_bytes": 30938,
+      "sha256": "952133d103cc9c32fbecf05be14300b7da0a9a806593a34c02f55a8d9e7502a1"
+    },
+    {
+      "local_path": "data/raw/pubchem/cid_properties_v2_010.json",
+      "source": "PubChem PUG REST",
+      "version": "API response retrieved 2026-10-05",
+      "downloaded_on": "2026-10-05",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{comma-separated-CIDs}/property/Title,CanonicalSMILES,IsomericSMILES,InChIKey/JSON",
+      "size_bytes": 31778,
+      "sha256": "b553b8829b148a9826e5852b4cbe13c980b5a65db130c3ad0f3c887bf2e6beef"
+    },
+    {
+      "local_path": "data/raw/pubchem/cid_properties_v2_011.json",
+      "source": "PubChem PUG REST",
+      "version": "API response retrieved 2026-10-05",
+      "downloaded_on": "2026-10-05",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{comma-separated-CIDs}/property/Title,CanonicalSMILES,IsomericSMILES,InChIKey/JSON",
+      "size_bytes": 31407,
+      "sha256": "926ba48b45acc961e79507df63ba4e5bb78769294e4c4815bc8694349a72eecf"
+    },
+    {
+      "local_path": "data/raw/pubchem/cid_properties_v2_012.json",
+      "source": "PubChem PUG REST",
+      "version": "API response retrieved 2026-10-05",
+      "downloaded_on": "2026-10-05",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{comma-separated-CIDs}/property/Title,CanonicalSMILES,IsomericSMILES,InChIKey/JSON",
+      "size_bytes": 32153,
+      "sha256": "635e8597e216dca4a1d33adada4206dfe0300b6c95c33a15293402aa83239757"
+    },
+    {
+      "local_path": "data/raw/pubchem/cid_properties_v2_013.json",
+      "source": "PubChem PUG REST",
+      "version": "API response retrieved 2026-10-05",
+      "downloaded_on": "2026-10-05",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{comma-separated-CIDs}/property/Title,CanonicalSMILES,IsomericSMILES,InChIKey/JSON",
+      "size_bytes": 32809,
+      "sha256": "b5e11667510deac9abb9a35efbc7ba2f883de9a84b9d70ebe7665a0aa7b1b390"
+    },
+    {
+      "local_path": "data/raw/pubchem/cid_properties_v2_014.json",
+      "source": "PubChem PUG REST",
+      "version": "API response retrieved 2026-10-05",
+      "downloaded_on": "2026-10-05",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{comma-separated-CIDs}/property/Title,CanonicalSMILES,IsomericSMILES,InChIKey/JSON",
+      "size_bytes": 33176,
+      "sha256": "75d626cb4971c5e192df2a6c05cdfc768b4ab5f314dfeac8e5b35aa63f77aeb6"
+    },
+    {
+      "local_path": "data/raw/pubchem/cid_properties_v2_015.json",
+      "source": "PubChem PUG REST",
+      "version": "API response retrieved 2026-10-05",
+      "downloaded_on": "2026-10-05",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{comma-separated-CIDs}/property/Title,CanonicalSMILES,IsomericSMILES,InChIKey/JSON",
+      "size_bytes": 38520,
+      "sha256": "eccecfc3fef42cf69bb6c095570de5439686e72400c27d1342ca458058bffa51"
+    },
+    {
+      "local_path": "data/raw/pubchem/cid_properties_v2_016.json",
+      "source": "PubChem PUG REST",
+      "version": "API response retrieved 2026-10-05",
+      "downloaded_on": "2026-10-05",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{comma-separated-CIDs}/property/Title,CanonicalSMILES,IsomericSMILES,InChIKey/JSON",
+      "size_bytes": 43830,
+      "sha256": "0808c0f97bfb4f480090ad2b5c8897ed1cf00578d63cfd22e4e0646474f28cb2"
+    },
+    {
+      "local_path": "data/raw/pubchem/cid_properties_v2_017.json",
+      "source": "PubChem PUG REST",
+      "version": "API response retrieved 2026-10-05",
+      "downloaded_on": "2026-10-05",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{comma-separated-CIDs}/property/Title,CanonicalSMILES,IsomericSMILES,InChIKey/JSON",
+      "size_bytes": 44304,
+      "sha256": "d920123d2ec13872b61b0872acd3cce68de9d1ff68744217dde4dcb746ce8104"
+    },
+    {
+      "local_path": "data/raw/pubchem/cid_properties_v2_018.json",
+      "source": "PubChem PUG REST",
+      "version": "API response retrieved 2026-10-05",
+      "downloaded_on": "2026-10-05",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{comma-separated-CIDs}/property/Title,CanonicalSMILES,IsomericSMILES,InChIKey/JSON",
+      "size_bytes": 12159,
+      "sha256": "de5204011a3b57e0e5e80ab6d6f4e1bc4a1f074142bdcd0aee25ab39944733b0"
+    },
+    {
+      "local_path": "data/raw/sider/drug_atc.tsv",
+      "source": "SIDER",
+      "version": "4.1 (2015-10-21)",
+      "downloaded_on": "2026-10-05",
+      "url": "https://sideeffects.embl.de/media/download/drug_atc.tsv",
+      "size_bytes": 32760,
+      "sha256": "b457e124cc13c482bbe3afcf76c43bd53764c14d40da563785e20146c2e0f229"
+    },
+    {
+      "local_path": "data/raw/sider/drug_names.tsv",
+      "source": "SIDER",
+      "version": "4.1 (2015-10-21)",
+      "downloaded_on": "2026-10-05",
+      "url": "https://sideeffects.embl.de/media/download/drug_names.tsv",
+      "size_bytes": 34759,
+      "sha256": "6427a3e3202c71a81dff97092957aacf0700b9c01f34b07e452a1ec47c92b007"
+    },
+    {
+      "local_path": "data/raw/sider/meddra.tsv.gz",
+      "source": "SIDER",
+      "version": "4.1 (2015-10-21)",
+      "downloaded_on": "2026-10-05",
+      "url": "https://sideeffects.embl.de/media/download/meddra.tsv.gz",
+      "size_bytes": 1084933,
+      "sha256": "8be5a752dae41ded5c952e360903ce2709b24a71efe0e300f0904ff1cb7a1daf"
+    },
+    {
+      "local_path": "data/raw/sider/meddra_all_indications.tsv.gz",
+      "source": "SIDER",
+      "version": "4.1 (2015-10-21)",
+      "downloaded_on": "2026-10-05",
+      "url": "https://sideeffects.embl.de/media/download/meddra_all_indications.tsv.gz",
+      "size_bytes": 344689,
+      "sha256": "3e019c1baec86a5ce056e428da803e821c2708ef22522950a738f330b5985d02"
+    },
+    {
+      "local_path": "data/raw/sider/meddra_all_label_indications.tsv.gz",
+      "source": "SIDER",
+      "version": "4.1 (2015-10-21)",
+      "downloaded_on": "2026-10-05",
+      "url": "https://sideeffects.embl.de/media/download/meddra_all_label_indications.tsv.gz",
+      "size_bytes": 5916355,
+      "sha256": "a725399154c6491977116521f74c21ca29d2bb6db8121dbc95286a3bdfb23626"
+    },
+    {
+      "local_path": "data/raw/sider/meddra_all_label_se.tsv.gz",
+      "source": "SIDER",
+      "version": "4.1 (2015-10-21)",
+      "downloaded_on": "2026-10-05",
+      "url": "https://sideeffects.embl.de/media/download/meddra_all_label_se.tsv.gz",
+      "size_bytes": 42534383,
+      "sha256": "4ae1cbe7f7edd7e572f31bbec5761d10f01d500851260ea8e39cddf60da52643"
+    },
+    {
+      "local_path": "data/raw/sider/meddra_all_se.tsv.gz",
+      "source": "SIDER",
+      "version": "4.1 (2015-10-21)",
+      "downloaded_on": "2026-10-05",
+      "url": "https://sideeffects.embl.de/media/download/meddra_all_se.tsv.gz",
+      "size_bytes": 2381171,
+      "sha256": "119b2f5319a9398da83e5fe3419889010dbacf8d3eef590251b00c025e2b3f99"
+    },
+    {
+      "local_path": "data/raw/sider/meddra_freq.tsv.gz",
+      "source": "SIDER",
+      "version": "4.1 (2015-10-21)",
+      "downloaded_on": "2026-10-05",
+      "url": "https://sideeffects.embl.de/media/download/meddra_freq.tsv.gz",
+      "size_bytes": 2058445,
+      "sha256": "fcdfbf479c6b568dfca557a3eb2cdbe49c4a3291090999c0de0bd7092feaec7f"
+    },
+    {
+      "local_path": "data/raw/string/9606.protein.aliases.v12.5.txt.gz",
+      "source": "STRING",
+      "version": "12.5; Homo sapiens (taxon 9606)",
+      "downloaded_on": "2026-10-05",
+      "url": "https://stringdb-downloads.org/download/protein.aliases.v12.5/9606.protein.aliases.v12.5.txt.gz",
+      "size_bytes": 19777800,
+      "sha256": "b65f730b993ed0c1bd72edf4565d3d425db42861101b29699704810e8f125680"
+    },
+    {
+      "local_path": "data/raw/string/9606.protein.info.v12.5.txt.gz",
+      "source": "STRING",
+      "version": "12.5; Homo sapiens (taxon 9606)",
+      "downloaded_on": "2026-10-05",
+      "url": "https://stringdb-downloads.org/download/protein.info.v12.5/9606.protein.info.v12.5.txt.gz",
+      "size_bytes": 1970090,
+      "sha256": "144de4b0d98c6a7dfde6ddc2591cf88657f27b989eadff4f501450c3ed1f0f1c"
+    },
+    {
+      "local_path": "data/raw/string/9606.protein.links.v12.5.txt.gz",
+      "source": "STRING",
+      "version": "12.5; Homo sapiens (taxon 9606)",
+      "downloaded_on": "2026-10-05",
+      "url": "https://stringdb-downloads.org/download/protein.links.v12.5/9606.protein.links.v12.5.txt.gz",
+      "size_bytes": 62813591,
+      "sha256": "3d6894ef3a0a8578b70421b7d6bac159c41ed2f6c1b5da21ab7fabb4ac21cd25"
+    },
+    {
+      "local_path": "data/raw/unichem/source.tsv.gz",
+      "source": "UniChem",
+      "version": "UniChem mapping snapshot 2026-10-03",
+      "downloaded_on": "2026-10-05",
+      "url": "https://ftp.ebi.ac.uk/pub/databases/chembl/UniChem/data/table_dumps/source.tsv.gz",
+      "size_bytes": 2900,
+      "sha256": "266fc9eed99005e15efa92eb0107daf88db9289d2fc0777e2b7172853eb2b277"
+    },
+    {
+      "local_path": "data/raw/unichem/src1src22.txt.gz",
+      "source": "UniChem",
+      "version": "UniChem ChEMBL (source 1) to PubChem (source 22), snapshot 2026-10-03",
+      "downloaded_on": "2026-10-05",
+      "url": "https://ftp.ebi.ac.uk/pub/databases/chembl/UniChem/data/wholeSourceMapping/src_id1/src1src22.txt.gz",
+      "size_bytes": 23065056,
+      "sha256": "ab6b42a2229034b5f0a0272d018d62a2a0e6116b831e1e3d1279760c93f85ff2"
+    },
+    {
+      "local_path": "data/raw/unichem/src2src22.txt.gz",
+      "source": "UniChem",
+      "version": "UniChem DrugBank (source 2) to PubChem (source 22), snapshot 2026-10-03",
+      "downloaded_on": "2026-10-05",
+      "url": "https://ftp.ebi.ac.uk/pub/databases/chembl/UniChem/data/wholeSourceMapping/src_id2/src2src22.txt.gz",
+      "size_bytes": 98349,
+      "sha256": "c5e47bad2d897a6bc36b01a6d1bae1b5641135358094ac0ae9898182a3d2f5b2"
+    },
+    {
+      "local_path": "data/raw/uniprot/UP000005640_9606.fasta.gz",
+      "source": "UniProt reference proteomes",
+      "version": "release 2026-09-15; UP000005640, Homo sapiens",
+      "downloaded_on": "2026-10-05",
+      "url": "https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/reference_proteomes/Eukaryota/UP000005640/UP000005640_9606.fasta.gz",
+      "size_bytes": 7728297,
+      "sha256": "64299d01e8f41fb6ef03cdf7ec051d3d4e5f041003b6b0fa75b09d439af79dce"
+    }
+  ]
+}

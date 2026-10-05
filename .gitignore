@@ -3,6 +3,7 @@ __pycache__/
 *.pyc
 data/raw/*
 !data/raw/.gitkeep
+!data/raw/DATA_PROVENANCE.yaml
 data/processed/*
 !data/processed/.gitkeep
 outputs/*

@@ -1,0 +1,64 @@
+# ============================================================
+# data.yaml – Hydra config for data loading and preprocessing
+# ============================================================
+#
+# Override individual values from CLI:
+#   python -m src.data.pipeline data.raw_dir=path/to/raw data.string_min_score=800
+
+data:
+  # ── Paths ──────────────────────────────────────────────────────────────────
+  raw_dir:       "data/raw"
+  processed_dir: "data/processed"
+  splits_dir:    "data/splits"
+  log_dir:       "logs"
+
+  # ── Sources ────────────────────────────────────────────────────────────────
+  sources:
+    ddinter:
+      enabled: true
+      files:
+        - "ddinter/ddinter_downloads_code_A.csv"
+        - "ddinter/ddinter_downloads_code_B.csv"
+    chembl:
+      enabled: false          # set true once chembl_drugs.csv is downloaded
+      file: "chembl/chembl_drugs.csv"
+    pubchem:
+      enabled: false          # set true once pubchem_mapping.csv is downloaded
+      file: "pubchem/pubchem_mapping.csv"
+    pharmgkb:
+      enabled: false          # set true once drugs.tsv is downloaded
+      file: "pharmgkb/drugs.tsv"
+    sider:
+      enabled: false          # set true once meddra_all_se.tsv is downloaded
+      file: "sider/meddra_all_se.tsv"
+    string:
+      enabled: false          # set true once protein.links.*.txt.gz is downloaded
+      dir:  "string"
+      min_score: 700          # N5 in plan.md: keep edges with combined_score >= 700
+    uniprot:
+      enabled: false          # set true once uniprot_sprot.tsv is downloaded
+      file: "uniprot/uniprot_sprot.tsv"
+    unichem:
+      enabled: false
+      file: "unichem/unichem_mapping.tsv"
+
+  # ── Cleaning settings ─────────────────────────────────────────────────────
+  cleaning:
+    drop_invalid_smiles: true    # remove drugs whose SMILES fails RDKit sanitization
+    deduplicate_by_inchikey: true
+    canonicalize_smiles: true
+    normalize_names: true
+    min_heavy_atoms: 3           # drop extremely small molecules (e.g. water, H2O)
+    max_heavy_atoms: 500         # drop PEG polymers / large biologics
+
+  # ── ID harmonisation priority ─────────────────────────────────────────────
+  harmonisation:
+    priority:
+      - inchikey   # most reliable (structure-derived)
+      - chembl_id
+      - pubchem_cid
+      - drugbank_id
+      - name_fuzzy  # last resort; logged as low-confidence
+
+  # ── Dry-run ───────────────────────────────────────────────────────────────
+  dry_run: false
