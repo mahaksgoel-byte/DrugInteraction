@@ -62,6 +62,12 @@ def source_for(path: Path) -> dict[str, str]:
             "version": "release 2026-09-15; UP000005640, Homo sapiens",
             "url": "https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/reference_proteomes/Eukaryota/UP000005640/UP000005640_9606.fasta.gz",
         }
+    if rel.startswith("chembl/"):
+        return {
+            "source": "ChEMBL",
+            "version": "37; official molecule representations release downloaded 2026-10-05",
+            "url": "https://ftp.ebi.ac.uk/pub/databases/chembl/ChEMBLdb/releases/chembl_37/chembl_37_chemreps.txt.gz",
+        }
     if rel.startswith("unichem/"):
         if name == "source.tsv.gz":
             url = "https://ftp.ebi.ac.uk/pub/databases/chembl/UniChem/data/table_dumps/source.tsv.gz"

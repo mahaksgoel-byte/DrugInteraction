@@ -11,6 +11,8 @@ the first data-collection and cleaning pass for the public DDInter benchmark.
   called out in `data/raw/DATA_PROVENANCE.yaml`.
 - PubChem PUG REST: batched title, structure, and InChIKey responses for the
   DDInter crosswalk compounds.
+- ChEMBL 37: official bulk molecule representations, used as a structure
+  fallback when the PubChem record is absent or incomplete.
 - UniChem: ChEMBL↔PubChem and DrugBank↔PubChem mapping tables and source IDs.
 - SIDER 4.1: all published source tables; side-effect edges are mapped through
   the PubChem stereo identifiers.
@@ -21,8 +23,8 @@ the first data-collection and cleaning pass for the public DDInter benchmark.
 
 Each raw file is left unmodified. File URLs, release dates, sizes, and SHA-256
 checksums are recorded in `data/raw/DATA_PROVENANCE.yaml`. Raw and processed
-data are excluded from Git by `.gitignore`; follow each source's terms before
-redistributing any files.
+datasets are excluded from Git; only the raw-data checksum/provenance manifest
+is tracked. Follow each source's terms before redistributing any files.
 
 ## Preprocess the downloaded data
 

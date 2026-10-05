@@ -64,6 +64,16 @@ def main() -> None:
             chembl, cid = line.rstrip("\n").split("\t")[:2]
             chembl_to_cid[chembl].add(cid)
 
+    # ChEMBL 37's official bulk chemreps archive is the direct structure
+    # source for DDInter entities whose PubChem records are absent/incomplete.
+    chembl_properties: dict[str, dict[str, str]] = {}
+    chembl_path = RAW / "chembl" / "chembl_37_chemreps.txt.gz"
+    if chembl_path.exists():
+        with gzip.open(chembl_path, "rt", encoding="utf-8") as stream:
+            reader = csv.DictReader(stream, delimiter="\t")
+            for row in reader:
+                chembl_properties[row["chembl_id"]] = row
+
     properties: dict[str, dict] = {}
     for path in sorted((RAW / "pubchem").glob("cid_properties*.json")):
         data = json.loads(path.read_text(encoding="utf-8"))
@@ -106,14 +116,20 @@ def main() -> None:
             )
             cid = pgx_cids[0] if pgx_cids else ""
         prop = properties.get(cid, {})
-        smiles = prop.get("SMILES", "") or prop.get("ConnectivitySMILES", "")
+        chembl_prop = chembl_properties.get(chembl_id, {})
+        smiles = (
+            prop.get("SMILES", "")
+            or prop.get("ConnectivitySMILES", "")
+            or chembl_prop.get("canonical_smiles", "")
+        )
+        inchi_key = prop.get("InChIKey", "") or chembl_prop.get("standard_inchi_key", "")
         valid = False
         canonical_smiles = ""
         reason = ""
-        if not cid:
+        if not cid and not chembl_prop:
             reason = "no_pubchem_mapping"
         elif not smiles:
-            reason = "no_pubchem_smiles"
+            reason = "no_pubchem_or_chembl_smiles"
         else:
             molecule = Chem.MolFromSmiles(smiles)
             if molecule is None:
@@ -129,8 +145,9 @@ def main() -> None:
                 "chembl_id": chembl_id,
                 "pubchem_cid": cid,
                 "pubchem_title": prop.get("Title", ""),
-                "inchi_key": prop.get("InChIKey", ""),
+                "inchi_key": inchi_key,
                 "source_smiles": smiles,
+                "structure_source": "PubChem" if prop.get("SMILES", "") or prop.get("ConnectivitySMILES", "") else ("ChEMBL" if chembl_prop else ""),
                 "canonical_smiles": canonical_smiles,
                 "rdkit_valid": valid,
                 "exclusion_reason": reason,
@@ -291,7 +308,8 @@ def main() -> None:
             "matched_supplemental_ddinter_crosswalk": sum(int(drug_id.removeprefix("DDInter")) in by_ddinter for drug_id in id_name),
             "with_any_drugbank_chembl_or_pubchem_id": int((all_drugs[["drugbank_id", "chembl_id", "pubchem_cid"]].ne("").any(axis=1)).sum()),
             "with_pubchem_cid_after_unichem_and_clinpgx_fallback": int(all_drugs["pubchem_cid"].ne("").sum()),
-            "with_pubchem_structure": int(all_drugs["source_smiles"].ne("").sum()),
+            "with_pubchem_or_chembl_structure": int(all_drugs["source_smiles"].ne("").sum()),
+            "structures_from_chembl_fallback": int(all_drugs["structure_source"].eq("ChEMBL").sum()),
             "rdkit_sanitized": int(all_drugs["rdkit_valid"].sum()),
             "unique_structures_after_inchikey_deduplication": int(clean_drugs["drug_id"].nunique()),
         },
@@ -299,7 +317,7 @@ def main() -> None:
         "duplicate_pair_rows_collapsed": len(raw_pairs) - self_pair_count - len(grouped),
         "self_pair_rows_dropped": self_pair_count,
         "severity_row_counts": dict(levels),
-        "source_drug_ids_with_pubchem_structure_and_rdkit_sanitization": len(valid_source_drugs),
+        "source_drug_ids_with_pubchem_or_chembl_structure_and_rdkit_sanitization": len(valid_source_drugs),
         "unique_canonical_drugs_after_structure_deduplication": len(clean_drugs),
         "drugs_excluded_by_reason": all_drugs.loc[~all_drugs["rdkit_valid"], "exclusion_reason"].value_counts().to_dict(),
         "clean_positive_pairs": len(clean_pairs),
