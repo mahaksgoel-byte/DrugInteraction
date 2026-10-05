@@ -1,6 +1,7 @@
 # Substrate or Structure? Classical vs Quantum Heads for Drug-Drug Interaction Prediction
 ### Final end-to-end project plan (data collection → final results)
 
+
 ---
 
 ## 0. Project summary
