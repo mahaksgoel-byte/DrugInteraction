@@ -1,0 +1,21 @@
+# Starting point for the structure-only pair baseline. Values are also the
+# defaults accepted by src/backbone/train_pairs.py.
+dataset:
+  benchmark: DDInter
+  setting: S1
+  seed: 0
+  feature_file: cache/features/morgan_r2_2048.npz
+model:
+  name: symmetric_pair_head
+  drug_feature_dim: 2048
+  width: 128
+  dropout: 0.2
+optimizer:
+  name: AdamW
+  learning_rate: 0.001
+  batch_size: 512
+training:
+  epochs: 50
+  early_stopping_metric: validation_auprc
+  checkpoint: best.pt
+metrics: [auprc, auroc]

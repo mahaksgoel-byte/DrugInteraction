@@ -6,6 +6,10 @@ data/raw/*
 !data/raw/DATA_PROVENANCE.yaml
 data/processed/*
 !data/processed/.gitkeep
+data/splits/*
+!data/splits/.gitkeep
+cache/features/*
+cache/graphs/*
 outputs/*
 !outputs/.gitkeep
 *.egg-info/
