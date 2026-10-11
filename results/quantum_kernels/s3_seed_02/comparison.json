@@ -1,0 +1,564 @@
+{
+  "schema_version": 1,
+  "split": "C:\\MehakDS\\DrugInteraction\\data\\splits\\S3\\seed_02",
+  "seed": 0,
+  "checkpoint": "C:\\MehakDS\\DrugInteraction\\results\\ddinter\\s3_seed_02_regularization_final",
+  "checkpoint_sha256": "477347207a806705d4149f39318014342a0ed885ed1e1c7f7f40310ab9b210ca",
+  "features_sha256": "af8e107ac9e33ac7a2a232582319b6bc6aa5764990a564983143c384c0c3b0c8",
+  "training_pairs": 1024,
+  "validation_pairs": 2986,
+  "representation": "Frozen feature MLP encoder; train-drug PCA and scaling",
+  "encoder_training_pairs": "full original training fold; all arms share this encoder",
+  "pca_variance": 0.8977169394493103,
+  "quantum_backend": "Qiskit Statevector",
+  "qiskit_version": "1.4.5",
+  "test_evaluation": "full fold after validation-only selection",
+  "split_hashes": {
+    "train": "fcaf60062058a7ae15cc3bbdebdfe5b40e0291be8e4040bdc2e2fa4ef7a3415c",
+    "val": "56fab63719395ac1e196eff89fd53fa9c3948d29511aa8e0a057f1b4b8a7e51b",
+    "test": "493d9080257bd043cc85fbba756f575751b9603efa5aedd48e83b8ba74c0458b"
+  },
+  "test_pairs": 9768,
+  "results": [
+    {
+      "arm": "Classical RBF",
+      "config": {
+        "C": 0.1,
+        "gamma": 0.05
+      },
+      "validation": {
+        "accuracy": 0.6788345612860014,
+        "auroc": 0.7295837821420703,
+        "auprc": 0.7302542681768637,
+        "f1": 0.672360778954561,
+        "mcc": 0.35794872754326496,
+        "threshold": -0.48219294658401923,
+        "pairs": 2986
+      },
+      "test": {
+        "accuracy": 0.6291973791973792,
+        "auroc": 0.6679913803685302,
+        "auprc": 0.6530666258812823,
+        "f1": 0.5983588378797959,
+        "mcc": 0.2614963898184982,
+        "threshold": -0.48219294658401923,
+        "pairs": 9768
+      }
+    },
+    {
+      "arm": "Classical logistic",
+      "config": {
+        "C": 0.1
+      },
+      "validation": {
+        "accuracy": 0.6851975887474883,
+        "auroc": 0.7436027651253965,
+        "auprc": 0.738370050232032,
+        "f1": 0.6774193548387096,
+        "mcc": 0.370826635994184,
+        "threshold": -0.4506273423077147,
+        "pairs": 2986
+      },
+      "test": {
+        "accuracy": 0.6342137592137592,
+        "auroc": 0.6723731353645358,
+        "auprc": 0.6569974533339025,
+        "f1": 0.6018054162487463,
+        "mcc": 0.27205593339164647,
+        "threshold": -0.4506273423077147,
+        "pairs": 9768
+      }
+    },
+    {
+      "arm": "Quantum fidelity",
+      "config": {
+        "C": 0.1,
+        "scale": 0.5
+      },
+      "validation": {
+        "accuracy": 0.6825184192900201,
+        "auroc": 0.7451760818178514,
+        "auprc": 0.7461459619003981,
+        "f1": 0.6955684007707129,
+        "mcc": 0.3663858301819714,
+        "threshold": -0.4475377491014998,
+        "pairs": 2986
+      },
+      "test": {
+        "accuracy": 0.6287878787878788,
+        "auroc": 0.6732974877938024,
+        "auprc": 0.6575510279685741,
+        "f1": 0.6262626262626263,
+        "mcc": 0.25759927940198585,
+        "threshold": -0.4475377491014998,
+        "pairs": 9768
+      }
+    },
+    {
+      "arm": "Quantum no cross entanglers",
+      "config": {
+        "C": 0.1,
+        "scale": 0.5,
+        "entangle": false,
+        "selection": "matched ablation"
+      },
+      "validation": {
+        "accuracy": 0.6818486269256531,
+        "auroc": 0.7449006280256737,
+        "auprc": 0.7462939630843661,
+        "f1": 0.6945337620578779,
+        "mcc": 0.3649581744553819,
+        "threshold": -0.4460758188258188,
+        "pairs": 2986
+      },
+      "test": {
+        "accuracy": 0.6288902538902539,
+        "auroc": 0.673550029815386,
+        "auprc": 0.658230135559162,
+        "f1": 0.6254778386196921,
+        "mcc": 0.2578233189370329,
+        "threshold": -0.4460758188258188,
+        "pairs": 9768
+      }
+    }
+  ],
+  "diagnostics": {
+    "swap_max_error": 2.220446049250313e-16,
+    "minimum_gram_eigenvalue": 0.0015479584582064538,
+    "gram_diagonal_max_error": 2.55351295663786e-15,
+    "mean_register_entanglement_bits": 0.05028030564394522,
+    "diagnostic_validation_pairs": 16
+  },
+  "trials": [
+    {
+      "arm": "Classical RBF",
+      "config": {
+        "C": 0.1,
+        "gamma": 0.05
+      },
+      "validation": {
+        "accuracy": 0.6788345612860014,
+        "auroc": 0.7295837821420703,
+        "auprc": 0.7302542681768637,
+        "f1": 0.672360778954561,
+        "mcc": 0.35794872754326496,
+        "threshold": -0.48219294658401923,
+        "pairs": 2986
+      },
+      "solver_iterations": [
+        423
+      ]
+    },
+    {
+      "arm": "Classical RBF",
+      "config": {
+        "C": 1.0,
+        "gamma": 0.05
+      },
+      "validation": {
+        "accuracy": 0.6808439383791025,
+        "auroc": 0.728358147353423,
+        "auprc": 0.7071605197581928,
+        "f1": 0.6739651043448511,
+        "mcc": 0.3620103145110554,
+        "threshold": -0.43236544373333335,
+        "pairs": 2986
+      },
+      "solver_iterations": [
+        854
+      ]
+    },
+    {
+      "arm": "Classical RBF",
+      "config": {
+        "C": 10.0,
+        "gamma": 0.05
+      },
+      "validation": {
+        "accuracy": 0.667782987273945,
+        "auroc": 0.7169281608434808,
+        "auprc": 0.7020431679433514,
+        "f1": 0.6616643929058663,
+        "mcc": 0.33578568068293874,
+        "threshold": -0.5056222557951069,
+        "pairs": 2986
+      },
+      "solver_iterations": [
+        3814
+      ]
+    },
+    {
+      "arm": "Classical RBF",
+      "config": {
+        "C": 0.1,
+        "gamma": 0.5
+      },
+      "validation": {
+        "accuracy": 0.6701272605492298,
+        "auroc": 0.7114590123411374,
+        "auprc": 0.6825517624648387,
+        "f1": 0.6460653970535394,
+        "mcc": 0.3434439996535894,
+        "threshold": 0.059862062203081545,
+        "pairs": 2986
+      },
+      "solver_iterations": [
+        519
+      ]
+    },
+    {
+      "arm": "Classical RBF",
+      "config": {
+        "C": 1.0,
+        "gamma": 0.5
+      },
+      "validation": {
+        "accuracy": 0.6694574681848627,
+        "auroc": 0.7021052475741896,
+        "auprc": 0.6626529062188771,
+        "f1": 0.6501240694789082,
+        "mcc": 0.341003798120166,
+        "threshold": -0.19326062046099038,
+        "pairs": 2986
+      },
+      "solver_iterations": [
+        1486
+      ]
+    },
+    {
+      "arm": "Classical RBF",
+      "config": {
+        "C": 10.0,
+        "gamma": 0.5
+      },
+      "validation": {
+        "accuracy": 0.6369725385130609,
+        "auroc": 0.6662706831478357,
+        "auprc": 0.6138882607530596,
+        "f1": 0.6302864938608458,
+        "mcc": 0.2741244379227983,
+        "threshold": -0.19375373734303347,
+        "pairs": 2986
+      },
+      "solver_iterations": [
+        3062
+      ]
+    },
+    {
+      "arm": "Classical RBF",
+      "config": {
+        "C": 0.1,
+        "gamma": 5.0
+      },
+      "validation": {
+        "accuracy": 0.6507032819825854,
+        "auroc": 0.6506321754254841,
+        "auprc": 0.5961173264588826,
+        "f1": 0.6484664644421975,
+        "mcc": 0.3014309736994658,
+        "threshold": 0.025031913368067038,
+        "pairs": 2986
+      },
+      "solver_iterations": [
+        512
+      ]
+    },
+    {
+      "arm": "Classical RBF",
+      "config": {
+        "C": 1.0,
+        "gamma": 5.0
+      },
+      "validation": {
+        "accuracy": 0.6490288010716678,
+        "auroc": 0.6484747531346328,
+        "auprc": 0.5940225963443175,
+        "f1": 0.6464237516869096,
+        "mcc": 0.29808996647816394,
+        "threshold": 0.009937605901033488,
+        "pairs": 2986
+      },
+      "solver_iterations": [
+        1357
+      ]
+    },
+    {
+      "arm": "Classical RBF",
+      "config": {
+        "C": 10.0,
+        "gamma": 5.0
+      },
+      "validation": {
+        "accuracy": 0.6493636972538513,
+        "auroc": 0.6479189107103522,
+        "auprc": 0.5928394312586724,
+        "f1": 0.6466419169760378,
+        "mcc": 0.2987628479509778,
+        "threshold": 0.006641141862426289,
+        "pairs": 2986
+      },
+      "solver_iterations": [
+        1668
+      ]
+    },
+    {
+      "arm": "Classical logistic",
+      "config": {
+        "C": 0.1
+      },
+      "validation": {
+        "accuracy": 0.6851975887474883,
+        "auroc": 0.7436027651253965,
+        "auprc": 0.738370050232032,
+        "f1": 0.6774193548387096,
+        "mcc": 0.370826635994184,
+        "threshold": -0.4506273423077147,
+        "pairs": 2986
+      },
+      "solver_iterations": [
+        12
+      ]
+    },
+    {
+      "arm": "Classical logistic",
+      "config": {
+        "C": 1.0
+      },
+      "validation": {
+        "accuracy": 0.6862022772940388,
+        "auroc": 0.7432304090219641,
+        "auprc": 0.7376557554085752,
+        "f1": 0.6968618570042058,
+        "mcc": 0.3733289518873867,
+        "threshold": -0.8145744468739947,
+        "pairs": 2986
+      },
+      "solver_iterations": [
+        19
+      ]
+    },
+    {
+      "arm": "Classical logistic",
+      "config": {
+        "C": 10.0
+      },
+      "validation": {
+        "accuracy": 0.6862022772940388,
+        "auroc": 0.7431424791469367,
+        "auprc": 0.73770128706569,
+        "f1": 0.6974491443332257,
+        "mcc": 0.3734380684827525,
+        "threshold": -0.8378563402433441,
+        "pairs": 2986
+      },
+      "solver_iterations": [
+        20
+      ]
+    },
+    {
+      "arm": "Quantum fidelity",
+      "config": {
+        "C": 0.1,
+        "scale": 0.5
+      },
+      "validation": {
+        "accuracy": 0.6825184192900201,
+        "auroc": 0.7451760818178514,
+        "auprc": 0.7461459619003981,
+        "f1": 0.6955684007707129,
+        "mcc": 0.3663858301819714,
+        "threshold": -0.4475377491014998,
+        "pairs": 2986
+      },
+      "solver_iterations": [
+        383
+      ]
+    },
+    {
+      "arm": "Quantum fidelity",
+      "config": {
+        "C": 1.0,
+        "scale": 0.5
+      },
+      "validation": {
+        "accuracy": 0.6808439383791025,
+        "auroc": 0.7406580115556007,
+        "auprc": 0.7387174835933821,
+        "f1": 0.6692120791391878,
+        "mcc": 0.36258567269638275,
+        "threshold": -0.2595259356966927,
+        "pairs": 2986
+      },
+      "solver_iterations": [
+        370
+      ]
+    },
+    {
+      "arm": "Quantum fidelity",
+      "config": {
+        "C": 10.0,
+        "scale": 0.5
+      },
+      "validation": {
+        "accuracy": 0.6771600803750837,
+        "auroc": 0.7315752143627169,
+        "auprc": 0.721611067471364,
+        "f1": 0.6749831422791639,
+        "mcc": 0.35435195617993215,
+        "threshold": -0.48699763723026074,
+        "pairs": 2986
+      },
+      "solver_iterations": [
+        1467
+      ]
+    },
+    {
+      "arm": "Quantum fidelity",
+      "config": {
+        "C": 0.1,
+        "scale": 1.0
+      },
+      "validation": {
+        "accuracy": 0.6868720696584059,
+        "auroc": 0.7413094104257016,
+        "auprc": 0.7382036521053479,
+        "f1": 0.6750086896072297,
+        "mcc": 0.3747441811062251,
+        "threshold": -0.21979567432156433,
+        "pairs": 2986
+      },
+      "solver_iterations": [
+        429
+      ]
+    },
+    {
+      "arm": "Quantum fidelity",
+      "config": {
+        "C": 1.0,
+        "scale": 1.0
+      },
+      "validation": {
+        "accuracy": 0.6831882116543871,
+        "auroc": 0.7261787425938147,
+        "auprc": 0.7002971836934699,
+        "f1": 0.679322033898305,
+        "mcc": 0.36648297794190576,
+        "threshold": -0.4944754077412282,
+        "pairs": 2986
+      },
+      "solver_iterations": [
+        949
+      ]
+    },
+    {
+      "arm": "Quantum fidelity",
+      "config": {
+        "C": 10.0,
+        "scale": 1.0
+      },
+      "validation": {
+        "accuracy": 0.6694574681848627,
+        "auroc": 0.7098009061263346,
+        "auprc": 0.6869726456014422,
+        "f1": 0.6471219163389346,
+        "mcc": 0.3416636100809538,
+        "threshold": -0.3529283721984714,
+        "pairs": 2986
+      },
+      "solver_iterations": [
+        4318
+      ]
+    },
+    {
+      "arm": "Quantum fidelity",
+      "config": {
+        "C": 0.1,
+        "scale": 2.0
+      },
+      "validation": {
+        "accuracy": 0.6912257200267917,
+        "auroc": 0.7355553870731419,
+        "auprc": 0.7044024775368638,
+        "f1": 0.6778476589797344,
+        "mcc": 0.38377738050464655,
+        "threshold": -0.09306829903154797,
+        "pairs": 2986
+      },
+      "solver_iterations": [
+        505
+      ]
+    },
+    {
+      "arm": "Quantum fidelity",
+      "config": {
+        "C": 1.0,
+        "scale": 2.0
+      },
+      "validation": {
+        "accuracy": 0.6808439383791025,
+        "auroc": 0.7227956855143156,
+        "auprc": 0.6838803615392067,
+        "f1": 0.67858347386172,
+        "mcc": 0.3617236606339911,
+        "threshold": -0.423513361573931,
+        "pairs": 2986
+      },
+      "solver_iterations": [
+        1408
+      ]
+    },
+    {
+      "arm": "Quantum fidelity",
+      "config": {
+        "C": 10.0,
+        "scale": 2.0
+      },
+      "validation": {
+        "accuracy": 0.6416610850636303,
+        "auroc": 0.6888211071178785,
+        "auprc": 0.6558135745431262,
+        "f1": 0.6641556811048337,
+        "mcc": 0.2858989931327768,
+        "threshold": -0.5836277196132336,
+        "pairs": 2986
+      },
+      "solver_iterations": [
+        4391
+      ]
+    },
+    {
+      "arm": "Quantum no cross entanglers",
+      "config": {
+        "C": 0.1,
+        "scale": 0.5,
+        "entangle": false,
+        "selection": "matched ablation"
+      },
+      "validation": {
+        "accuracy": 0.6818486269256531,
+        "auroc": 0.7449006280256737,
+        "auprc": 0.7462939630843661,
+        "f1": 0.6945337620578779,
+        "mcc": 0.3649581744553819,
+        "threshold": -0.4460758188258188,
+        "pairs": 2986
+      },
+      "solver_iterations": [
+        364
+      ]
+    }
+  ],
+  "elapsed_seconds": 417.33,
+  "limitations": [
+    "Feature MLP encoder, not the planned heterogeneous GNN.",
+    "Encoder and heads use the same validation fold for selection; results are exploratory.",
+    "Head training is capped; upstream encoder saw all training pairs.",
+    "No quantum speed advantage or hardware execution is claimed.",
+    "Single-cohort pair scores do not establish superiority across unseen drugs."
+  ],
+  "split_seed": 2,
+  "encoder_seed": 0,
+  "sampling_seed": 0,
+  "feature_file": "C:\\MehakDS\\DrugInteraction\\cache\\features\\morgan_r2_2048.npz",
+  "metadata_note": "Explicit seed roles added after completion; original seed field denotes encoder and head sampling seed. Metrics unchanged."
+}

@@ -1,0 +1,143 @@
+{
+  "boost_compact_leaves7": {
+    "validation": {
+      "accuracy": 0.6989194499017681,
+      "auroc": 0.7635054288041192,
+      "auprc": 0.7644148808288457,
+      "threshold": 0.44087745022838015,
+      "pairs": 2036
+    },
+    "rounds": 200
+  },
+  "boost_compact_leaves15": {
+    "validation": {
+      "accuracy": 0.6984282907662083,
+      "auroc": 0.7623127516105002,
+      "auprc": 0.7656725539311475,
+      "threshold": 0.43460660725610656,
+      "pairs": 2036
+    },
+    "rounds": 75
+  },
+  "boost_compact_leaves31": {
+    "validation": {
+      "accuracy": 0.7038310412573674,
+      "auroc": 0.7710465066909576,
+      "auprc": 0.7732493169139061,
+      "threshold": 0.4107386452870501,
+      "pairs": 2036
+    },
+    "rounds": 200
+  },
+  "boost_selected_leaves7": {
+    "validation": {
+      "accuracy": 0.6817288801571709,
+      "auroc": 0.7374846090604867,
+      "auprc": 0.7465576013100812,
+      "threshold": 0.41994531172709454,
+      "pairs": 2036
+    },
+    "rounds": 150
+  },
+  "boost_selected_leaves15": {
+    "validation": {
+      "accuracy": 0.6851669941060904,
+      "auroc": 0.744118634712696,
+      "auprc": 0.7504028219357859,
+      "threshold": 0.417649924779691,
+      "pairs": 2036
+    },
+    "rounds": 150
+  },
+  "boost_selected_leaves31": {
+    "validation": {
+      "accuracy": 0.6861493123772102,
+      "auroc": 0.7449118229434037,
+      "auprc": 0.7569533901519021,
+      "threshold": 0.383728461968499,
+      "pairs": 2036
+    },
+    "rounds": 100
+  },
+  "transfer_side0.0_k5": {
+    "validation": {
+      "accuracy": 0.5982318271119843,
+      "auroc": 0.6320764548538874,
+      "auprc": 0.6377314492822375,
+      "threshold": 0.20182086527347565,
+      "pairs": 2036
+    }
+  },
+  "transfer_side0.0_k20": {
+    "validation": {
+      "accuracy": 0.6232809430255403,
+      "auroc": 0.6760598036907377,
+      "auprc": 0.6788642197573763,
+      "threshold": 0.1392257958650589,
+      "pairs": 2036
+    }
+  },
+  "transfer_side0.0_k50": {
+    "validation": {
+      "accuracy": 0.631139489194499,
+      "auroc": 0.6738211215797376,
+      "auprc": 0.6904097395284858,
+      "threshold": 0.1494588851928711,
+      "pairs": 2036
+    }
+  },
+  "transfer_side0.5_k5": {
+    "validation": {
+      "accuracy": 0.650294695481336,
+      "auroc": 0.6970966608898375,
+      "auprc": 0.6848972871404131,
+      "threshold": 0.10038918256759644,
+      "pairs": 2036
+    }
+  },
+  "transfer_side0.5_k20": {
+    "validation": {
+      "accuracy": 0.6728880157170923,
+      "auroc": 0.7265777884136622,
+      "auprc": 0.7308856996838982,
+      "threshold": 0.16155532002449036,
+      "pairs": 2036
+    }
+  },
+  "transfer_side0.5_k50": {
+    "validation": {
+      "accuracy": 0.6836935166994106,
+      "auroc": 0.7326521435381214,
+      "auprc": 0.7382472325582466,
+      "threshold": 0.17909188568592072,
+      "pairs": 2036
+    }
+  },
+  "transfer_side1.0_k5": {
+    "validation": {
+      "accuracy": 0.6365422396856582,
+      "auroc": 0.67840077041543,
+      "auprc": 0.6713016317219465,
+      "threshold": 0.12260803580284119,
+      "pairs": 2036
+    }
+  },
+  "transfer_side1.0_k20": {
+    "validation": {
+      "accuracy": 0.6611001964636543,
+      "auroc": 0.719525939764012,
+      "auprc": 0.7178533906636488,
+      "threshold": 0.1385267674922943,
+      "pairs": 2036
+    }
+  },
+  "transfer_side1.0_k50": {
+    "validation": {
+      "accuracy": 0.6807465618860511,
+      "auroc": 0.7357940180870075,
+      "auprc": 0.7293524033501848,
+      "threshold": 0.14481444656848907,
+      "pairs": 2036
+    }
+  }
+}

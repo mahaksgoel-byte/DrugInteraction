@@ -1,0 +1,132 @@
+{
+  "engine": "Qiskit Statevector",
+  "mode": "local exact statevector simulation",
+  "split": "data\\splits\\S3\\seed_03",
+  "feature_file": "cache\\features\\morgan_r2_2048.npz",
+  "seed": 3,
+  "epochs_requested": 8,
+  "epochs_completed": 8,
+  "best_epoch": 7,
+  "pair_cap": 512,
+  "pair_sampling": "stratified; same sampled pairs for both models",
+  "train_pairs": 512,
+  "validation_pairs": 256,
+  "test_pairs": 256,
+  "pair_sample_sha256": {
+    "train": "2498d2ea20e3b19a91739cf53c4a16d510bda84b90801ce7f75fec08508a4fde",
+    "validation": "912e0c65b11d78486698ce9f6b6fa966bf14a7c46b4235eb33236f4465acb8f3",
+    "test": "15a27d7f2ad26365f3a0e6c6a2a7ab990ab779c3db21703d715ed3cea49e6f34"
+  },
+  "pca_explained_variance_ratio": [
+    0.1741005778312683,
+    0.023047400638461113,
+    0.01943190209567547,
+    0.016629472374916077
+  ],
+  "classical": {
+    "accuracy": 0.5625,
+    "balanced_accuracy": 0.5625,
+    "auroc": 0.5687255859375,
+    "auprc": 0.6121948318022783,
+    "matthews_correlation": 0.12909944487358055,
+    "threshold": 0.5339380569782395,
+    "pairs_evaluated": 256
+  },
+  "quantum": {
+    "accuracy": 0.44140625,
+    "balanced_accuracy": 0.44140625,
+    "auroc": 0.46771240234375,
+    "auprc": 0.4801956852936672,
+    "matthews_correlation": -0.15976443237275834,
+    "threshold": 0.39492251633958103,
+    "pairs_evaluated": 256
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.1536310946964348,
+      "train_batches": 8,
+      "val_auprc": 0.4864848774832853,
+      "val_auroc": 0.4310302734375,
+      "val_accuracy": 0.515625,
+      "val_threshold": 0.8595939178603444,
+      "elapsed_seconds": 3.16
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.9382129405418631,
+      "train_batches": 8,
+      "val_auprc": 0.4861097363006913,
+      "val_auroc": 0.43450927734375,
+      "val_accuracy": 0.515625,
+      "val_threshold": 0.7787404566131796,
+      "elapsed_seconds": 6.35
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.8445424188086539,
+      "train_batches": 8,
+      "val_auprc": 0.4899352140412935,
+      "val_auroc": 0.4417724609375,
+      "val_accuracy": 0.515625,
+      "val_threshold": 0.7158310842758113,
+      "elapsed_seconds": 9.51
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.8005147216282593,
+      "train_batches": 8,
+      "val_auprc": 0.4885209192284842,
+      "val_auroc": 0.435791015625,
+      "val_accuracy": 0.5234375,
+      "val_threshold": 0.6805876974117756,
+      "elapsed_seconds": 12.68
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.7731615969179069,
+      "train_batches": 8,
+      "val_auprc": 0.4897306340487962,
+      "val_auroc": 0.44635009765625,
+      "val_accuracy": 0.5234375,
+      "val_threshold": 0.6865410405494231,
+      "elapsed_seconds": 15.97
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.7564791388795281,
+      "train_batches": 8,
+      "val_auprc": 0.48990091810306946,
+      "val_auroc": 0.4595947265625,
+      "val_accuracy": 0.5234375,
+      "val_threshold": 0.706152426357256,
+      "elapsed_seconds": 19.32
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.7443188177927437,
+      "train_batches": 8,
+      "val_auprc": 0.49087154965001056,
+      "val_auroc": 0.4683837890625,
+      "val_accuracy": 0.53125,
+      "val_threshold": 0.39492251633958103,
+      "elapsed_seconds": 22.91
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.7371859768045327,
+      "train_batches": 8,
+      "val_auprc": 0.49052076243777654,
+      "val_auroc": 0.47119140625,
+      "val_accuracy": 0.5390625,
+      "val_threshold": 0.416086137857862,
+      "elapsed_seconds": 26.37
+    }
+  ],
+  "circuit": "4-qubit H + angle RY + ring ZZ + trainable RY + ring CNOT; odd-parity readout",
+  "limitations": [
+    "This is simulated quantum computation on a classical CPU, not quantum hardware.",
+    "A capped, stratified sample is used for local runtime; scores are exploratory.",
+    "PCA and scaling are fit using training data only; threshold is selected on validation."
+  ]
+}

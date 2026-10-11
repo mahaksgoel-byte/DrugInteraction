@@ -1,0 +1,176 @@
+{
+  "protocol": {
+    "selection": "mean validation accuracy over all listed cohorts; AUPRC tie-break",
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "max_boosting_rounds": 200,
+    "feature_sha256": "af8e107ac9e33ac7a2a232582319b6bc6aa5764990a564983143c384c0c3b0c8",
+    "threshold": "validation Youden J; balanced cohorts make this accuracy-maximizing",
+    "test_access": "after every cohort validation trial and final selection file is saved",
+    "limits": [
+      "Historical test cohorts previously reported; exploratory, not independent confirmation.",
+      "Unlisted pairs are not verified negatives. Transfer treats absent training edges as zero evidence.",
+      "Only train and validation data influence model selection. Cohorts overlap."
+    ]
+  },
+  "selection": {
+    "model": "boost_compact_leaves31",
+    "ranking": [
+      {
+        "model": "boost_compact_leaves31",
+        "accuracy": 0.696542994892647,
+        "auprc": 0.7470056871923382
+      },
+      {
+        "model": "boost_compact_leaves15",
+        "accuracy": 0.6930288992510092,
+        "auprc": 0.7388606148988007
+      },
+      {
+        "model": "boost_compact_leaves7",
+        "accuracy": 0.6910760714493073,
+        "auprc": 0.7368389728640864
+      },
+      {
+        "model": "boost_selected_leaves15",
+        "accuracy": 0.6819030769688821,
+        "auprc": 0.7260805132201876
+      },
+      {
+        "model": "boost_selected_leaves31",
+        "accuracy": 0.6808909316638546,
+        "auprc": 0.7336367391005845
+      },
+      {
+        "model": "boost_selected_leaves7",
+        "accuracy": 0.679965689687552,
+        "auprc": 0.7222306694447901
+      },
+      {
+        "model": "transfer_side0.5_k50",
+        "accuracy": 0.6649548389948637,
+        "auprc": 0.7157361063774066
+      },
+      {
+        "model": "transfer_side1.0_k50",
+        "accuracy": 0.6627688794425357,
+        "auprc": 0.7080336810688332
+      },
+      {
+        "model": "transfer_side0.5_k20",
+        "accuracy": 0.6611064314185519,
+        "auprc": 0.7170774576681955
+      },
+      {
+        "model": "transfer_side1.0_k20",
+        "accuracy": 0.6552486370891984,
+        "auprc": 0.7102536913708889
+      },
+      {
+        "model": "transfer_side1.0_k5",
+        "accuracy": 0.6395014459868261,
+        "auprc": 0.6807535651066834
+      },
+      {
+        "model": "transfer_side0.5_k5",
+        "accuracy": 0.6386399383298526,
+        "auprc": 0.6829965995684543
+      },
+      {
+        "model": "transfer_side0.0_k20",
+        "accuracy": 0.6148671427639157,
+        "auprc": 0.662386909755943
+      },
+      {
+        "model": "transfer_side0.0_k50",
+        "accuracy": 0.6119615995786056,
+        "auprc": 0.6593224243527236
+      },
+      {
+        "model": "transfer_side0.0_k5",
+        "accuracy": 0.6010474664837329,
+        "auprc": 0.6373928261233565
+      }
+    ],
+    "thresholds": {
+      "0": 0.4107386452870501,
+      "1": 0.4247087613380432,
+      "2": 0.5052024270704748
+    }
+  },
+  "results": [
+    {
+      "seed": 0,
+      "model": "boost_compact_leaves31",
+      "validation": {
+        "accuracy": 0.7038310412573674,
+        "auroc": 0.7710465066909576,
+        "auprc": 0.7732493169139061,
+        "threshold": 0.4107386452870501,
+        "pairs": 2036
+      },
+      "test": {
+        "accuracy": 0.6576404780066107,
+        "auroc": 0.7203541341368248,
+        "auprc": 0.7169216542897607,
+        "threshold": 0.4107386452870501,
+        "pairs": 7866
+      },
+      "split_hashes": {
+        "train": "b5418decc3a7411e2b5292c758cdc9878d51bb278da134c7935778df07d484c6",
+        "val": "8519778f80c34ccdc7cd740f6b7cd118dd04617f17559122df5c4915a545c2d4",
+        "test": "dadd4ea45b6821fcc090993d0eec9cafa60ff99b7882d86d7c8393fcb269355f"
+      }
+    },
+    {
+      "seed": 1,
+      "model": "boost_compact_leaves31",
+      "validation": {
+        "accuracy": 0.6741435562805873,
+        "auroc": 0.7222848345659167,
+        "auprc": 0.6932741933107135,
+        "threshold": 0.4247087613380432,
+        "pairs": 2452
+      },
+      "test": {
+        "accuracy": 0.6590171534538711,
+        "auroc": 0.72663019497065,
+        "auprc": 0.7263455909045381,
+        "threshold": 0.4247087613380432,
+        "pairs": 8628
+      },
+      "split_hashes": {
+        "train": "00d83c5effb24012097e1bb75b8d5aefe67bbd6f8870bebd1b0b0f502a41ea6a",
+        "val": "4d00514838457c5b24b1d22583b8309c97097f1c07d7137b78af62c3fd248965",
+        "test": "86f70af8a9ffc8363ddc8fd1870d5c694ddf848b807f4b144b5161697005f7c6"
+      }
+    },
+    {
+      "seed": 2,
+      "model": "boost_compact_leaves31",
+      "validation": {
+        "accuracy": 0.7116543871399866,
+        "auroc": 0.773153708150875,
+        "auprc": 0.7744935513523948,
+        "threshold": 0.5052024270704748,
+        "pairs": 2986
+      },
+      "test": {
+        "accuracy": 0.6446560196560197,
+        "auroc": 0.7039418522833756,
+        "auprc": 0.6938691992529054,
+        "threshold": 0.5052024270704748,
+        "pairs": 9768
+      },
+      "split_hashes": {
+        "train": "fcaf60062058a7ae15cc3bbdebdfe5b40e0291be8e4040bdc2e2fa4ef7a3415c",
+        "val": "56fab63719395ac1e196eff89fd53fa9c3948d29511aa8e0a057f1b4b8a7e51b",
+        "test": "493d9080257bd043cc85fbba756f575751b9603efa5aedd48e83b8ba74c0458b"
+      }
+    }
+  ],
+  "elapsed_seconds": 603.62
+}

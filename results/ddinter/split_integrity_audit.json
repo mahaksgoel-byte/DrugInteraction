@@ -1,0 +1,936 @@
+{
+  "status": "passed",
+  "split_count": 30,
+  "reports": [
+    {
+      "setting": "S1",
+      "split_seed": 0,
+      "status": "passed",
+      "checks": [
+        "source checksum",
+        "pair uniqueness and canonical order",
+        "known positives never labeled negative",
+        "1:1 unlabeled sampling",
+        "cross-split pair separation",
+        "cold-start drug roles"
+      ],
+      "counts": {
+        "train": {
+          "pairs": 168380,
+          "positive": 84190,
+          "unlabeled": 84190
+        },
+        "val": {
+          "pairs": 24054,
+          "positive": 12027,
+          "unlabeled": 12027
+        },
+        "test": {
+          "pairs": 48110,
+          "positive": 24055,
+          "unlabeled": 24055
+        }
+      },
+      "pairs_audited": 240544
+    },
+    {
+      "setting": "S1",
+      "split_seed": 1,
+      "status": "passed",
+      "checks": [
+        "source checksum",
+        "pair uniqueness and canonical order",
+        "known positives never labeled negative",
+        "1:1 unlabeled sampling",
+        "cross-split pair separation",
+        "cold-start drug roles"
+      ],
+      "counts": {
+        "train": {
+          "pairs": 168380,
+          "positive": 84190,
+          "unlabeled": 84190
+        },
+        "val": {
+          "pairs": 24054,
+          "positive": 12027,
+          "unlabeled": 12027
+        },
+        "test": {
+          "pairs": 48110,
+          "positive": 24055,
+          "unlabeled": 24055
+        }
+      },
+      "pairs_audited": 240544
+    },
+    {
+      "setting": "S1",
+      "split_seed": 2,
+      "status": "passed",
+      "checks": [
+        "source checksum",
+        "pair uniqueness and canonical order",
+        "known positives never labeled negative",
+        "1:1 unlabeled sampling",
+        "cross-split pair separation",
+        "cold-start drug roles"
+      ],
+      "counts": {
+        "train": {
+          "pairs": 168380,
+          "positive": 84190,
+          "unlabeled": 84190
+        },
+        "val": {
+          "pairs": 24054,
+          "positive": 12027,
+          "unlabeled": 12027
+        },
+        "test": {
+          "pairs": 48110,
+          "positive": 24055,
+          "unlabeled": 24055
+        }
+      },
+      "pairs_audited": 240544
+    },
+    {
+      "setting": "S1",
+      "split_seed": 3,
+      "status": "passed",
+      "checks": [
+        "source checksum",
+        "pair uniqueness and canonical order",
+        "known positives never labeled negative",
+        "1:1 unlabeled sampling",
+        "cross-split pair separation",
+        "cold-start drug roles"
+      ],
+      "counts": {
+        "train": {
+          "pairs": 168380,
+          "positive": 84190,
+          "unlabeled": 84190
+        },
+        "val": {
+          "pairs": 24054,
+          "positive": 12027,
+          "unlabeled": 12027
+        },
+        "test": {
+          "pairs": 48110,
+          "positive": 24055,
+          "unlabeled": 24055
+        }
+      },
+      "pairs_audited": 240544
+    },
+    {
+      "setting": "S1",
+      "split_seed": 4,
+      "status": "passed",
+      "checks": [
+        "source checksum",
+        "pair uniqueness and canonical order",
+        "known positives never labeled negative",
+        "1:1 unlabeled sampling",
+        "cross-split pair separation",
+        "cold-start drug roles"
+      ],
+      "counts": {
+        "train": {
+          "pairs": 168380,
+          "positive": 84190,
+          "unlabeled": 84190
+        },
+        "val": {
+          "pairs": 24054,
+          "positive": 12027,
+          "unlabeled": 12027
+        },
+        "test": {
+          "pairs": 48110,
+          "positive": 24055,
+          "unlabeled": 24055
+        }
+      },
+      "pairs_audited": 240544
+    },
+    {
+      "setting": "S1",
+      "split_seed": 5,
+      "status": "passed",
+      "checks": [
+        "source checksum",
+        "pair uniqueness and canonical order",
+        "known positives never labeled negative",
+        "1:1 unlabeled sampling",
+        "cross-split pair separation",
+        "cold-start drug roles"
+      ],
+      "counts": {
+        "train": {
+          "pairs": 168380,
+          "positive": 84190,
+          "unlabeled": 84190
+        },
+        "val": {
+          "pairs": 24054,
+          "positive": 12027,
+          "unlabeled": 12027
+        },
+        "test": {
+          "pairs": 48110,
+          "positive": 24055,
+          "unlabeled": 24055
+        }
+      },
+      "pairs_audited": 240544
+    },
+    {
+      "setting": "S1",
+      "split_seed": 6,
+      "status": "passed",
+      "checks": [
+        "source checksum",
+        "pair uniqueness and canonical order",
+        "known positives never labeled negative",
+        "1:1 unlabeled sampling",
+        "cross-split pair separation",
+        "cold-start drug roles"
+      ],
+      "counts": {
+        "train": {
+          "pairs": 168380,
+          "positive": 84190,
+          "unlabeled": 84190
+        },
+        "val": {
+          "pairs": 24054,
+          "positive": 12027,
+          "unlabeled": 12027
+        },
+        "test": {
+          "pairs": 48110,
+          "positive": 24055,
+          "unlabeled": 24055
+        }
+      },
+      "pairs_audited": 240544
+    },
+    {
+      "setting": "S1",
+      "split_seed": 7,
+      "status": "passed",
+      "checks": [
+        "source checksum",
+        "pair uniqueness and canonical order",
+        "known positives never labeled negative",
+        "1:1 unlabeled sampling",
+        "cross-split pair separation",
+        "cold-start drug roles"
+      ],
+      "counts": {
+        "train": {
+          "pairs": 168380,
+          "positive": 84190,
+          "unlabeled": 84190
+        },
+        "val": {
+          "pairs": 24054,
+          "positive": 12027,
+          "unlabeled": 12027
+        },
+        "test": {
+          "pairs": 48110,
+          "positive": 24055,
+          "unlabeled": 24055
+        }
+      },
+      "pairs_audited": 240544
+    },
+    {
+      "setting": "S1",
+      "split_seed": 8,
+      "status": "passed",
+      "checks": [
+        "source checksum",
+        "pair uniqueness and canonical order",
+        "known positives never labeled negative",
+        "1:1 unlabeled sampling",
+        "cross-split pair separation",
+        "cold-start drug roles"
+      ],
+      "counts": {
+        "train": {
+          "pairs": 168380,
+          "positive": 84190,
+          "unlabeled": 84190
+        },
+        "val": {
+          "pairs": 24054,
+          "positive": 12027,
+          "unlabeled": 12027
+        },
+        "test": {
+          "pairs": 48110,
+          "positive": 24055,
+          "unlabeled": 24055
+        }
+      },
+      "pairs_audited": 240544
+    },
+    {
+      "setting": "S1",
+      "split_seed": 9,
+      "status": "passed",
+      "checks": [
+        "source checksum",
+        "pair uniqueness and canonical order",
+        "known positives never labeled negative",
+        "1:1 unlabeled sampling",
+        "cross-split pair separation",
+        "cold-start drug roles"
+      ],
+      "counts": {
+        "train": {
+          "pairs": 168380,
+          "positive": 84190,
+          "unlabeled": 84190
+        },
+        "val": {
+          "pairs": 24054,
+          "positive": 12027,
+          "unlabeled": 12027
+        },
+        "test": {
+          "pairs": 48110,
+          "positive": 24055,
+          "unlabeled": 24055
+        }
+      },
+      "pairs_audited": 240544
+    },
+    {
+      "setting": "S2",
+      "split_seed": 0,
+      "status": "passed",
+      "checks": [
+        "source checksum",
+        "pair uniqueness and canonical order",
+        "known positives never labeled negative",
+        "1:1 unlabeled sampling",
+        "cross-split pair separation",
+        "cold-start drug roles"
+      ],
+      "counts": {
+        "train": {
+          "pairs": 126998,
+          "positive": 63499,
+          "unlabeled": 63499
+        },
+        "val": {
+          "pairs": 32500,
+          "positive": 16250,
+          "unlabeled": 16250
+        },
+        "test": {
+          "pairs": 63252,
+          "positive": 31626,
+          "unlabeled": 31626
+        }
+      },
+      "pairs_audited": 222750
+    },
+    {
+      "setting": "S2",
+      "split_seed": 1,
+      "status": "passed",
+      "checks": [
+        "source checksum",
+        "pair uniqueness and canonical order",
+        "known positives never labeled negative",
+        "1:1 unlabeled sampling",
+        "cross-split pair separation",
+        "cold-start drug roles"
+      ],
+      "counts": {
+        "train": {
+          "pairs": 120458,
+          "positive": 60229,
+          "unlabeled": 60229
+        },
+        "val": {
+          "pairs": 34250,
+          "positive": 17125,
+          "unlabeled": 17125
+        },
+        "test": {
+          "pairs": 65284,
+          "positive": 32642,
+          "unlabeled": 32642
+        }
+      },
+      "pairs_audited": 219992
+    },
+    {
+      "setting": "S2",
+      "split_seed": 2,
+      "status": "passed",
+      "checks": [
+        "source checksum",
+        "pair uniqueness and canonical order",
+        "known positives never labeled negative",
+        "1:1 unlabeled sampling",
+        "cross-split pair separation",
+        "cold-start drug roles"
+      ],
+      "counts": {
+        "train": {
+          "pairs": 112566,
+          "positive": 56283,
+          "unlabeled": 56283
+        },
+        "val": {
+          "pairs": 37586,
+          "positive": 18793,
+          "unlabeled": 18793
+        },
+        "test": {
+          "pairs": 66622,
+          "positive": 33311,
+          "unlabeled": 33311
+        }
+      },
+      "pairs_audited": 216774
+    },
+    {
+      "setting": "S2",
+      "split_seed": 3,
+      "status": "passed",
+      "checks": [
+        "source checksum",
+        "pair uniqueness and canonical order",
+        "known positives never labeled negative",
+        "1:1 unlabeled sampling",
+        "cross-split pair separation",
+        "cold-start drug roles"
+      ],
+      "counts": {
+        "train": {
+          "pairs": 121678,
+          "positive": 60839,
+          "unlabeled": 60839
+        },
+        "val": {
+          "pairs": 31078,
+          "positive": 15539,
+          "unlabeled": 15539
+        },
+        "test": {
+          "pairs": 67234,
+          "positive": 33617,
+          "unlabeled": 33617
+        }
+      },
+      "pairs_audited": 219990
+    },
+    {
+      "setting": "S2",
+      "split_seed": 4,
+      "status": "passed",
+      "checks": [
+        "source checksum",
+        "pair uniqueness and canonical order",
+        "known positives never labeled negative",
+        "1:1 unlabeled sampling",
+        "cross-split pair separation",
+        "cold-start drug roles"
+      ],
+      "counts": {
+        "train": {
+          "pairs": 113026,
+          "positive": 56513,
+          "unlabeled": 56513
+        },
+        "val": {
+          "pairs": 34674,
+          "positive": 17337,
+          "unlabeled": 17337
+        },
+        "test": {
+          "pairs": 69110,
+          "positive": 34555,
+          "unlabeled": 34555
+        }
+      },
+      "pairs_audited": 216810
+    },
+    {
+      "setting": "S2",
+      "split_seed": 5,
+      "status": "passed",
+      "checks": [
+        "source checksum",
+        "pair uniqueness and canonical order",
+        "known positives never labeled negative",
+        "1:1 unlabeled sampling",
+        "cross-split pair separation",
+        "cold-start drug roles"
+      ],
+      "counts": {
+        "train": {
+          "pairs": 111816,
+          "positive": 55908,
+          "unlabeled": 55908
+        },
+        "val": {
+          "pairs": 31084,
+          "positive": 15542,
+          "unlabeled": 15542
+        },
+        "test": {
+          "pairs": 73196,
+          "positive": 36598,
+          "unlabeled": 36598
+        }
+      },
+      "pairs_audited": 216096
+    },
+    {
+      "setting": "S2",
+      "split_seed": 6,
+      "status": "passed",
+      "checks": [
+        "source checksum",
+        "pair uniqueness and canonical order",
+        "known positives never labeled negative",
+        "1:1 unlabeled sampling",
+        "cross-split pair separation",
+        "cold-start drug roles"
+      ],
+      "counts": {
+        "train": {
+          "pairs": 114772,
+          "positive": 57386,
+          "unlabeled": 57386
+        },
+        "val": {
+          "pairs": 36138,
+          "positive": 18069,
+          "unlabeled": 18069
+        },
+        "test": {
+          "pairs": 66266,
+          "positive": 33133,
+          "unlabeled": 33133
+        }
+      },
+      "pairs_audited": 217176
+    },
+    {
+      "setting": "S2",
+      "split_seed": 7,
+      "status": "passed",
+      "checks": [
+        "source checksum",
+        "pair uniqueness and canonical order",
+        "known positives never labeled negative",
+        "1:1 unlabeled sampling",
+        "cross-split pair separation",
+        "cold-start drug roles"
+      ],
+      "counts": {
+        "train": {
+          "pairs": 117480,
+          "positive": 58740,
+          "unlabeled": 58740
+        },
+        "val": {
+          "pairs": 33148,
+          "positive": 16574,
+          "unlabeled": 16574
+        },
+        "test": {
+          "pairs": 68406,
+          "positive": 34203,
+          "unlabeled": 34203
+        }
+      },
+      "pairs_audited": 219034
+    },
+    {
+      "setting": "S2",
+      "split_seed": 8,
+      "status": "passed",
+      "checks": [
+        "source checksum",
+        "pair uniqueness and canonical order",
+        "known positives never labeled negative",
+        "1:1 unlabeled sampling",
+        "cross-split pair separation",
+        "cold-start drug roles"
+      ],
+      "counts": {
+        "train": {
+          "pairs": 116246,
+          "positive": 58123,
+          "unlabeled": 58123
+        },
+        "val": {
+          "pairs": 33878,
+          "positive": 16939,
+          "unlabeled": 16939
+        },
+        "test": {
+          "pairs": 68206,
+          "positive": 34103,
+          "unlabeled": 34103
+        }
+      },
+      "pairs_audited": 218330
+    },
+    {
+      "setting": "S2",
+      "split_seed": 9,
+      "status": "passed",
+      "checks": [
+        "source checksum",
+        "pair uniqueness and canonical order",
+        "known positives never labeled negative",
+        "1:1 unlabeled sampling",
+        "cross-split pair separation",
+        "cold-start drug roles"
+      ],
+      "counts": {
+        "train": {
+          "pairs": 121972,
+          "positive": 60986,
+          "unlabeled": 60986
+        },
+        "val": {
+          "pairs": 31518,
+          "positive": 15759,
+          "unlabeled": 15759
+        },
+        "test": {
+          "pairs": 67042,
+          "positive": 33521,
+          "unlabeled": 33521
+        }
+      },
+      "pairs_audited": 220532
+    },
+    {
+      "setting": "S3",
+      "split_seed": 0,
+      "status": "passed",
+      "checks": [
+        "source checksum",
+        "pair uniqueness and canonical order",
+        "known positives never labeled negative",
+        "1:1 unlabeled sampling",
+        "cross-split pair separation",
+        "cold-start drug roles"
+      ],
+      "counts": {
+        "train": {
+          "pairs": 126998,
+          "positive": 63499,
+          "unlabeled": 63499
+        },
+        "val": {
+          "pairs": 2036,
+          "positive": 1018,
+          "unlabeled": 1018
+        },
+        "test": {
+          "pairs": 7866,
+          "positive": 3933,
+          "unlabeled": 3933
+        }
+      },
+      "pairs_audited": 136900
+    },
+    {
+      "setting": "S3",
+      "split_seed": 1,
+      "status": "passed",
+      "checks": [
+        "source checksum",
+        "pair uniqueness and canonical order",
+        "known positives never labeled negative",
+        "1:1 unlabeled sampling",
+        "cross-split pair separation",
+        "cold-start drug roles"
+      ],
+      "counts": {
+        "train": {
+          "pairs": 120458,
+          "positive": 60229,
+          "unlabeled": 60229
+        },
+        "val": {
+          "pairs": 2452,
+          "positive": 1226,
+          "unlabeled": 1226
+        },
+        "test": {
+          "pairs": 8628,
+          "positive": 4314,
+          "unlabeled": 4314
+        }
+      },
+      "pairs_audited": 131538
+    },
+    {
+      "setting": "S3",
+      "split_seed": 2,
+      "status": "passed",
+      "checks": [
+        "source checksum",
+        "pair uniqueness and canonical order",
+        "known positives never labeled negative",
+        "1:1 unlabeled sampling",
+        "cross-split pair separation",
+        "cold-start drug roles"
+      ],
+      "counts": {
+        "train": {
+          "pairs": 112566,
+          "positive": 56283,
+          "unlabeled": 56283
+        },
+        "val": {
+          "pairs": 2986,
+          "positive": 1493,
+          "unlabeled": 1493
+        },
+        "test": {
+          "pairs": 9768,
+          "positive": 4884,
+          "unlabeled": 4884
+        }
+      },
+      "pairs_audited": 125320
+    },
+    {
+      "setting": "S3",
+      "split_seed": 3,
+      "status": "passed",
+      "checks": [
+        "source checksum",
+        "pair uniqueness and canonical order",
+        "known positives never labeled negative",
+        "1:1 unlabeled sampling",
+        "cross-split pair separation",
+        "cold-start drug roles"
+      ],
+      "counts": {
+        "train": {
+          "pairs": 121678,
+          "positive": 60839,
+          "unlabeled": 60839
+        },
+        "val": {
+          "pairs": 1966,
+          "positive": 983,
+          "unlabeled": 983
+        },
+        "test": {
+          "pairs": 9698,
+          "positive": 4849,
+          "unlabeled": 4849
+        }
+      },
+      "pairs_audited": 133342
+    },
+    {
+      "setting": "S3",
+      "split_seed": 4,
+      "status": "passed",
+      "checks": [
+        "source checksum",
+        "pair uniqueness and canonical order",
+        "known positives never labeled negative",
+        "1:1 unlabeled sampling",
+        "cross-split pair separation",
+        "cold-start drug roles"
+      ],
+      "counts": {
+        "train": {
+          "pairs": 113026,
+          "positive": 56513,
+          "unlabeled": 56513
+        },
+        "val": {
+          "pairs": 2638,
+          "positive": 1319,
+          "unlabeled": 1319
+        },
+        "test": {
+          "pairs": 10472,
+          "positive": 5236,
+          "unlabeled": 5236
+        }
+      },
+      "pairs_audited": 126136
+    },
+    {
+      "setting": "S3",
+      "split_seed": 5,
+      "status": "passed",
+      "checks": [
+        "source checksum",
+        "pair uniqueness and canonical order",
+        "known positives never labeled negative",
+        "1:1 unlabeled sampling",
+        "cross-split pair separation",
+        "cold-start drug roles"
+      ],
+      "counts": {
+        "train": {
+          "pairs": 111816,
+          "positive": 55908,
+          "unlabeled": 55908
+        },
+        "val": {
+          "pairs": 2242,
+          "positive": 1121,
+          "unlabeled": 1121
+        },
+        "test": {
+          "pairs": 11924,
+          "positive": 5962,
+          "unlabeled": 5962
+        }
+      },
+      "pairs_audited": 125982
+    },
+    {
+      "setting": "S3",
+      "split_seed": 6,
+      "status": "passed",
+      "checks": [
+        "source checksum",
+        "pair uniqueness and canonical order",
+        "known positives never labeled negative",
+        "1:1 unlabeled sampling",
+        "cross-split pair separation",
+        "cold-start drug roles"
+      ],
+      "counts": {
+        "train": {
+          "pairs": 114772,
+          "positive": 57386,
+          "unlabeled": 57386
+        },
+        "val": {
+          "pairs": 2908,
+          "positive": 1454,
+          "unlabeled": 1454
+        },
+        "test": {
+          "pairs": 9790,
+          "positive": 4895,
+          "unlabeled": 4895
+        }
+      },
+      "pairs_audited": 127470
+    },
+    {
+      "setting": "S3",
+      "split_seed": 7,
+      "status": "passed",
+      "checks": [
+        "source checksum",
+        "pair uniqueness and canonical order",
+        "known positives never labeled negative",
+        "1:1 unlabeled sampling",
+        "cross-split pair separation",
+        "cold-start drug roles"
+      ],
+      "counts": {
+        "train": {
+          "pairs": 117480,
+          "positive": 58740,
+          "unlabeled": 58740
+        },
+        "val": {
+          "pairs": 2318,
+          "positive": 1159,
+          "unlabeled": 1159
+        },
+        "test": {
+          "pairs": 9768,
+          "positive": 4884,
+          "unlabeled": 4884
+        }
+      },
+      "pairs_audited": 129566
+    },
+    {
+      "setting": "S3",
+      "split_seed": 8,
+      "status": "passed",
+      "checks": [
+        "source checksum",
+        "pair uniqueness and canonical order",
+        "known positives never labeled negative",
+        "1:1 unlabeled sampling",
+        "cross-split pair separation",
+        "cold-start drug roles"
+      ],
+      "counts": {
+        "train": {
+          "pairs": 116246,
+          "positive": 58123,
+          "unlabeled": 58123
+        },
+        "val": {
+          "pairs": 2496,
+          "positive": 1248,
+          "unlabeled": 1248
+        },
+        "test": {
+          "pairs": 9928,
+          "positive": 4964,
+          "unlabeled": 4964
+        }
+      },
+      "pairs_audited": 128670
+    },
+    {
+      "setting": "S3",
+      "split_seed": 9,
+      "status": "passed",
+      "checks": [
+        "source checksum",
+        "pair uniqueness and canonical order",
+        "known positives never labeled negative",
+        "1:1 unlabeled sampling",
+        "cross-split pair separation",
+        "cold-start drug roles"
+      ],
+      "counts": {
+        "train": {
+          "pairs": 121972,
+          "positive": 60986,
+          "unlabeled": 60986
+        },
+        "val": {
+          "pairs": 1994,
+          "positive": 997,
+          "unlabeled": 997
+        },
+        "test": {
+          "pairs": 9310,
+          "positive": 4655,
+          "unlabeled": 4655
+        }
+      },
+      "pairs_audited": 133276
+    }
+  ]
+}

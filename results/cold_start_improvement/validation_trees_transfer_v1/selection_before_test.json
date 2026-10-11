@@ -1,0 +1,85 @@
+{
+  "model": "boost_compact_leaves31",
+  "ranking": [
+    {
+      "model": "boost_compact_leaves31",
+      "accuracy": 0.696542994892647,
+      "auprc": 0.7470056871923382
+    },
+    {
+      "model": "boost_compact_leaves15",
+      "accuracy": 0.6930288992510092,
+      "auprc": 0.7388606148988007
+    },
+    {
+      "model": "boost_compact_leaves7",
+      "accuracy": 0.6910760714493073,
+      "auprc": 0.7368389728640864
+    },
+    {
+      "model": "boost_selected_leaves15",
+      "accuracy": 0.6819030769688821,
+      "auprc": 0.7260805132201876
+    },
+    {
+      "model": "boost_selected_leaves31",
+      "accuracy": 0.6808909316638546,
+      "auprc": 0.7336367391005845
+    },
+    {
+      "model": "boost_selected_leaves7",
+      "accuracy": 0.679965689687552,
+      "auprc": 0.7222306694447901
+    },
+    {
+      "model": "transfer_side0.5_k50",
+      "accuracy": 0.6649548389948637,
+      "auprc": 0.7157361063774066
+    },
+    {
+      "model": "transfer_side1.0_k50",
+      "accuracy": 0.6627688794425357,
+      "auprc": 0.7080336810688332
+    },
+    {
+      "model": "transfer_side0.5_k20",
+      "accuracy": 0.6611064314185519,
+      "auprc": 0.7170774576681955
+    },
+    {
+      "model": "transfer_side1.0_k20",
+      "accuracy": 0.6552486370891984,
+      "auprc": 0.7102536913708889
+    },
+    {
+      "model": "transfer_side1.0_k5",
+      "accuracy": 0.6395014459868261,
+      "auprc": 0.6807535651066834
+    },
+    {
+      "model": "transfer_side0.5_k5",
+      "accuracy": 0.6386399383298526,
+      "auprc": 0.6829965995684543
+    },
+    {
+      "model": "transfer_side0.0_k20",
+      "accuracy": 0.6148671427639157,
+      "auprc": 0.662386909755943
+    },
+    {
+      "model": "transfer_side0.0_k50",
+      "accuracy": 0.6119615995786056,
+      "auprc": 0.6593224243527236
+    },
+    {
+      "model": "transfer_side0.0_k5",
+      "accuracy": 0.6010474664837329,
+      "auprc": 0.6373928261233565
+    }
+  ],
+  "thresholds": {
+    "0": 0.4107386452870501,
+    "1": 0.4247087613380432,
+    "2": 0.5052024270704748
+  }
+}

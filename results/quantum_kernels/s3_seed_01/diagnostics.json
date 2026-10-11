@@ -1,0 +1,214 @@
+{
+  "validation_pairs": 512,
+  "seed": 712,
+  "noise": [
+    {
+      "model": "ideal",
+      "level": 0,
+      "accuracy": 0.61328125,
+      "auroc": 0.635284423828125,
+      "auprc": 0.6308048902408346,
+      "f1": 0.5330188679245284,
+      "mcc": 0.24126489304439913,
+      "threshold": -0.4319592525282778,
+      "pairs": 512
+    },
+    {
+      "model": "finite overlap shots; exact normalization",
+      "level": 100,
+      "accuracy": 0.48046875,
+      "auroc": 0.4859619140625,
+      "auprc": 0.5032587808462442,
+      "f1": 0.4962121212121212,
+      "mcc": -0.039139018192821846,
+      "threshold": -0.4319592525282778,
+      "pairs": 512
+    },
+    {
+      "model": "finite overlap shots; exact normalization",
+      "level": 1000,
+      "accuracy": 0.552734375,
+      "auroc": 0.5641632080078125,
+      "auprc": 0.574505564381828,
+      "f1": 0.5483234714003945,
+      "mcc": 0.10548887232483806,
+      "threshold": -0.4319592525282778,
+      "pairs": 512
+    },
+    {
+      "model": "finite overlap shots; exact normalization",
+      "level": 10000,
+      "accuracy": 0.580078125,
+      "auroc": 0.5900115966796875,
+      "auprc": 0.5900627884872861,
+      "f1": 0.5168539325842697,
+      "mcc": 0.16594023220152385,
+      "threshold": -0.4319592525282778,
+      "pairs": 512
+    },
+    {
+      "model": "global depolarization of query state",
+      "level": 0.01,
+      "accuracy": 0.61328125,
+      "auroc": 0.6352691650390625,
+      "auprc": 0.6307981364507498,
+      "f1": 0.5330188679245284,
+      "mcc": 0.24126489304439913,
+      "threshold": -0.4319592525282778,
+      "pairs": 512
+    },
+    {
+      "model": "global depolarization of query state",
+      "level": 0.05,
+      "accuracy": 0.61328125,
+      "auroc": 0.635284423828125,
+      "auprc": 0.6308096787681833,
+      "f1": 0.5330188679245284,
+      "mcc": 0.24126489304439913,
+      "threshold": -0.4319592525282778,
+      "pairs": 512
+    },
+    {
+      "model": "global depolarization of query state",
+      "level": 0.1,
+      "accuracy": 0.61328125,
+      "auroc": 0.635284423828125,
+      "auprc": 0.6308096787681833,
+      "f1": 0.5330188679245284,
+      "mcc": 0.24126489304439913,
+      "threshold": -0.4319592525282778,
+      "pairs": 512
+    }
+  ],
+  "calibration": [
+    {
+      "arm": "Quantum fidelity",
+      "method": "Platt scaling fitted on fixed validation subset",
+      "fit_pairs": 512,
+      "test_pairs": 8628,
+      "brier_score": 0.22132997460328202,
+      "ece_10_bins": 0.07854089127339267,
+      "reliability": [
+        {
+          "lower": 0.1,
+          "count": 18,
+          "confidence": 0.17331544626284465,
+          "observed_fraction": 0.05555555555555555
+        },
+        {
+          "lower": 0.2,
+          "count": 91,
+          "confidence": 0.26298496146085276,
+          "observed_fraction": 0.16483516483516483
+        },
+        {
+          "lower": 0.3,
+          "count": 479,
+          "confidence": 0.3682038453556691,
+          "observed_fraction": 0.267223382045929
+        },
+        {
+          "lower": 0.4,
+          "count": 3344,
+          "confidence": 0.4558504949871982,
+          "observed_fraction": 0.33851674641148327
+        },
+        {
+          "lower": 0.5,
+          "count": 2777,
+          "confidence": 0.5431552857129324,
+          "observed_fraction": 0.5480734605689593
+        },
+        {
+          "lower": 0.6,
+          "count": 1293,
+          "confidence": 0.6434805002587464,
+          "observed_fraction": 0.7424593967517401
+        },
+        {
+          "lower": 0.7,
+          "count": 535,
+          "confidence": 0.7399756756784,
+          "observed_fraction": 0.8803738317757009
+        },
+        {
+          "lower": 0.8,
+          "count": 91,
+          "confidence": 0.8338977476272196,
+          "observed_fraction": 0.9340659340659341
+        }
+      ]
+    },
+    {
+      "arm": "Classical RBF",
+      "method": "Platt scaling fitted on fixed validation subset",
+      "fit_pairs": 512,
+      "test_pairs": 8628,
+      "brier_score": 0.2222686602369011,
+      "ece_10_bins": 0.07949311306762077,
+      "reliability": [
+        {
+          "lower": 0.1,
+          "count": 23,
+          "confidence": 0.17399442946381694,
+          "observed_fraction": 0.043478260869565216
+        },
+        {
+          "lower": 0.2,
+          "count": 73,
+          "confidence": 0.26902301885386537,
+          "observed_fraction": 0.1643835616438356
+        },
+        {
+          "lower": 0.3,
+          "count": 552,
+          "confidence": 0.3696395217851529,
+          "observed_fraction": 0.2753623188405797
+        },
+        {
+          "lower": 0.4,
+          "count": 3500,
+          "confidence": 0.45399518655859805,
+          "observed_fraction": 0.3462857142857143
+        },
+        {
+          "lower": 0.5,
+          "count": 2640,
+          "confidence": 0.5436653711255901,
+          "observed_fraction": 0.5696969696969697
+        },
+        {
+          "lower": 0.6,
+          "count": 1181,
+          "confidence": 0.643044697193455,
+          "observed_fraction": 0.7349703640982218
+        },
+        {
+          "lower": 0.7,
+          "count": 576,
+          "confidence": 0.7431683669071139,
+          "observed_fraction": 0.8454861111111112
+        },
+        {
+          "lower": 0.8,
+          "count": 83,
+          "confidence": 0.8195276529101146,
+          "observed_fraction": 0.9397590361445783
+        }
+      ]
+    }
+  ],
+  "surrogate": {
+    "model": "RBF SVR; fixed C=1, epsilon=.01; trained on quantum train scores",
+    "validation_r2": 0.8947819369112562,
+    "validation_rmse": 0.36156697279983757,
+    "validation_spearman": 0.9285153701891715
+  },
+  "limitations": [
+    "Noise and surrogate checks use a fixed validation subset; calibration is fitted there and scored on full test. No test-driven selection.",
+    "Shot experiment uses one seeded measurement realization and exact normalization.",
+    "Global state depolarization is not gate-specific or device-calibrated noise.",
+    "Calibration uses benchmark class prevalence; probabilities are not clinical risk estimates.",
+    "A good classical surrogate weakens claims of difficult-to-simulate structure; it does not prove equivalence."
+  ]
+}

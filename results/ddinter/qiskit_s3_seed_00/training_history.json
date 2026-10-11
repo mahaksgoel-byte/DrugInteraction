@@ -1,0 +1,97 @@
+{
+  "engine": "Qiskit Statevector",
+  "mode": "local exact statevector simulation",
+  "split": "data\\splits\\S3\\seed_00",
+  "feature_file": "cache\\features\\morgan_r2_2048.npz",
+  "seed": 0,
+  "epochs_requested": 8,
+  "epochs_completed": 5,
+  "best_epoch": 2,
+  "pair_cap": 512,
+  "pair_sampling": "stratified; same sampled pairs for both models",
+  "train_pairs": 512,
+  "validation_pairs": 256,
+  "test_pairs": 256,
+  "pca_explained_variance_ratio": [
+    0.17297495901584625,
+    0.02484629489481449,
+    0.020014507696032524,
+    0.014725607819855213
+  ],
+  "classical": {
+    "accuracy": 0.55078125,
+    "balanced_accuracy": 0.55078125,
+    "auroc": 0.5576171875,
+    "auprc": 0.5850753334777095,
+    "matthews_correlation": 0.12908035155914152,
+    "threshold": 0.5549130909046469,
+    "pairs_evaluated": 256
+  },
+  "quantum": {
+    "accuracy": 0.50390625,
+    "balanced_accuracy": 0.50390625,
+    "auroc": 0.45098876953125,
+    "auprc": 0.5009230915587113,
+    "matthews_correlation": 0.06262242910851495,
+    "threshold": 0.9656156975047346,
+    "pairs_evaluated": 256
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss_plus": 1.1962707823092138,
+      "train_loss_minus": 1.106195475668944,
+      "val_auprc": 0.45962490024933966,
+      "val_auroc": 0.4373779296875,
+      "val_accuracy": 0.5078125,
+      "val_threshold": 0.6209759893132176,
+      "elapsed_seconds": 0.96
+    },
+    {
+      "epoch": 2,
+      "train_loss_plus": 1.414174003459696,
+      "train_loss_minus": 1.1426655276969913,
+      "val_auprc": 0.4645483402716035,
+      "val_auroc": 0.43548583984375,
+      "val_accuracy": 0.50390625,
+      "val_threshold": 0.9656156975047346,
+      "elapsed_seconds": 1.87
+    },
+    {
+      "epoch": 3,
+      "train_loss_plus": 1.308010964958524,
+      "train_loss_minus": 1.2054042763014883,
+      "val_auprc": 0.46182243317498084,
+      "val_auroc": 0.4342041015625,
+      "val_accuracy": 0.50390625,
+      "val_threshold": 0.5644792605568212,
+      "elapsed_seconds": 2.86
+    },
+    {
+      "epoch": 4,
+      "train_loss_plus": 1.0484404919942376,
+      "train_loss_minus": 1.197921683486256,
+      "val_auprc": 0.45822175717141267,
+      "val_auroc": 0.43157958984375,
+      "val_accuracy": 0.5078125,
+      "val_threshold": 0.5695484584092548,
+      "elapsed_seconds": 3.81
+    },
+    {
+      "epoch": 5,
+      "train_loss_plus": 1.3209880350032417,
+      "train_loss_minus": 1.0633016916572613,
+      "val_auprc": 0.4576181804837253,
+      "val_auroc": 0.43115234375,
+      "val_accuracy": 0.50390625,
+      "val_threshold": 0.6030736421969626,
+      "elapsed_seconds": 4.87
+    }
+  ],
+  "circuit": "4-qubit H + angle RY + ring ZZ + trainable RY + ring CNOT; odd-parity readout",
+  "limitations": [
+    "This is simulated quantum computation on a classical CPU, not quantum hardware.",
+    "A capped, stratified sample is used for local runtime; scores are exploratory.",
+    "PCA and scaling are fit using training data only; threshold is selected on validation."
+  ]
+}

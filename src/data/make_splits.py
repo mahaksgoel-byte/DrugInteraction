@@ -1,4 +1,4 @@
-"""Create reproducible DDInter pair splits and degree-weighted unlabeled pairs.
+"""Create reproducible DDInter pair splits and uniformly sampled unlabeled pairs.
 
 Unlisted pairs are sampled as *unlabeled negatives* for the benchmark; they are
 not claims that the drugs do not interact. Cold-start splits deliberately leave
@@ -71,19 +71,17 @@ def _cold_edges(edges: list[tuple[str, str]], seed: int, setting: str) -> tuple[
                    "test_heldout_drugs": sorted(test_drugs), "positive_pairs_unused_for_cohort_rules": dropped}
 
 
-def _degree_matched_unlisted(positives: list[tuple[str, str]],
-                             drug_universe: list[str], seed: int, setting: str,
-                             split_name: str, cohorts: dict, forbidden_mask: np.ndarray) -> list[tuple[str, str]]:
-    """Sample 1:1 unlabeled pairs with endpoint probability proportional to degree."""
+def _sample_unlisted(positives: list[tuple[str, str]],
+                     drug_universe: list[str], seed: int, setting: str,
+                     split_name: str, cohorts: dict, forbidden_mask: np.ndarray) -> list[tuple[str, str]]:
+    """Uniformly sample eligible unlabeled pairs without using evaluation labels."""
     if not positives:
         return []
-    cap: dict[str, int] = {}
-    for a, b in positives:
-        cap[a] = cap.get(a, 0) + 1
-        cap[b] = cap.get(b, 0) + 1
-    active = sorted(d for d in drug_universe if cap.get(d, 0))
     rng = np.random.default_rng(seed)
-    nodes = np.asarray(sorted(cap), dtype=object)
+    # Candidate endpoints must be drawn from the legal cohort, not inferred
+    # from positive test degrees. Using held-out positive degrees to construct
+    # test negatives conditions the evaluation set on its answers.
+    nodes = np.asarray(sorted(drug_universe), dtype=object)
     node_index = {drug: i for i, drug in enumerate(drug_universe)}
     active_index = np.fromiter((node_index[str(d)] for d in nodes), dtype=np.int64)
     if setting == "S1":
@@ -112,11 +110,7 @@ def _degree_matched_unlisted(positives: list[tuple[str, str]],
     eligible = np.flatnonzero(keep)
     if len(eligible) < len(positives):
         raise RuntimeError(f"Only {len(eligible)} eligible unlabeled pairs for {len(positives)} requested")
-    degree = np.asarray([cap[str(d)] for d in nodes], dtype=np.float64)
-    log_weights = np.log(degree[left_idx[eligible]] * degree[right_idx[eligible]])
-    # Exponential race gives weighted sampling without replacement in O(N).
-    race = np.log(-np.log(rng.random(len(eligible)))) - log_weights
-    selected = eligible[np.argpartition(race, len(positives) - 1)[:len(positives)]]
+    selected = rng.choice(eligible, size=len(positives), replace=False)
     return [(_pair_key(str(a_ids[i]), str(b_ids[i]))) for i in selected]
 
 
@@ -147,11 +141,11 @@ def make_splits(processed_dir: Path, splits_dir: Path, seeds: list[int]) -> None
             meta = {"setting": setting, "seed": seed, "positive_input_sha256": digest,
                     "split_contract": ("positive edge ratios 70/10/20" if setting == "S1" else
                                        "70/10/20 drug cohort assignment; edge counts vary and cross-cohort positives are omitted"),
-                    "negative_sampling": "1:1 randomized sampling with endpoint probabilities proportional to fold positive degree; unlabeled pairs only",
+                    "negative_sampling": "1:1 uniform sampling without replacement within legal fold cohorts; unlabeled pairs only",
                     "positive_pairs_unused_for_cohort_rules": cohort_meta.get("positive_pairs_unused_for_cohort_rules", 0),
                     "cohorts": cohort_meta}
             for split_name, pos in folds.items():
-                neg = _degree_matched_unlisted(pos, drug_universe,
+                neg = _sample_unlisted(pos, drug_universe,
                     seed * 101 + ("train", "val", "test").index(split_name), setting, split_name, cohort_meta, forbidden_mask)
                 for a, b in neg:
                     forbidden_mask[node_index[a] * len(drug_universe) + node_index[b]] = True

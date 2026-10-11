@@ -1,0 +1,26 @@
+{
+  "name": "train_positive_degree_only_logistic",
+  "split": "data\\splits\\S2\\seed_02",
+  "degree_source": "positive interaction pairs in training split only",
+  "feature_definition": [
+    "log1p(degree_a)+log1p(degree_b)",
+    "abs(log1p(degree_a)-log1p(degree_b))",
+    "log1p(degree_a)*log1p(degree_b)"
+  ],
+  "unique_training_drugs_with_positive_degree": 1026,
+  "validation_selected_threshold": 0.00698514321044167,
+  "validation": {
+    "accuracy": 0.6850689086361943,
+    "auroc": 0.7543735504022235,
+    "auprc": 0.7266906684876382
+  },
+  "test": {
+    "accuracy": 0.7000840563177329,
+    "balanced_accuracy": 0.7000840563177329,
+    "matthews_correlation": 0.4024640108941145,
+    "auroc": 0.7720936276682461,
+    "auprc": 0.7475665645018524,
+    "fraction_of_test_endpoints_with_nonzero_train_degree": 0.5
+  },
+  "interpretation": "Shortcut diagnostic only; it predicts from observed training positive degree, not chemistry or mechanism."
+}

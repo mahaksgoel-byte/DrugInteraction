@@ -1,0 +1,143 @@
+{
+  "boost_compact_leaves7": {
+    "validation": {
+      "accuracy": 0.7026121902210315,
+      "auroc": 0.7636792641166703,
+      "auprc": 0.7646292413426578,
+      "threshold": 0.4902065354924457,
+      "pairs": 2986
+    },
+    "rounds": 50
+  },
+  "boost_compact_leaves15": {
+    "validation": {
+      "accuracy": 0.7052913596784997,
+      "auroc": 0.7670995568065127,
+      "auprc": 0.7676142621972433,
+      "threshold": 0.5183103868199289,
+      "pairs": 2986
+    },
+    "rounds": 50
+  },
+  "boost_compact_leaves31": {
+    "validation": {
+      "accuracy": 0.7116543871399866,
+      "auroc": 0.773153708150875,
+      "auprc": 0.7744935513523948,
+      "threshold": 0.5052024270704748,
+      "pairs": 2986
+    },
+    "rounds": 50
+  },
+  "boost_selected_leaves7": {
+    "validation": {
+      "accuracy": 0.709310113864702,
+      "auroc": 0.7617376289170852,
+      "auprc": 0.7609655857210984,
+      "threshold": 0.5081925901458563,
+      "pairs": 2986
+    },
+    "rounds": 75
+  },
+  "boost_selected_leaves15": {
+    "validation": {
+      "accuracy": 0.7096450100468855,
+      "auroc": 0.7643239336596012,
+      "auprc": 0.76234107277212,
+      "threshold": 0.5156168502629221,
+      "pairs": 2986
+    },
+    "rounds": 50
+  },
+  "boost_selected_leaves31": {
+    "validation": {
+      "accuracy": 0.7056262558606832,
+      "auroc": 0.7663696491194227,
+      "auprc": 0.7666077527353791,
+      "threshold": 0.49091256337345995,
+      "pairs": 2986
+    },
+    "rounds": 50
+  },
+  "transfer_side0.0_k5": {
+    "validation": {
+      "accuracy": 0.6208975217682519,
+      "auroc": 0.6444943561133022,
+      "auprc": 0.6593398668360178,
+      "threshold": 0.12675803899765015,
+      "pairs": 2986
+    }
+  },
+  "transfer_side0.0_k20": {
+    "validation": {
+      "accuracy": 0.6373074346952444,
+      "auroc": 0.6753662660623432,
+      "auprc": 0.6865499706428814,
+      "threshold": 0.12755930423736572,
+      "pairs": 2986
+    }
+  },
+  "transfer_side0.0_k50": {
+    "validation": {
+      "accuracy": 0.6366376423308774,
+      "auroc": 0.6780739230048332,
+      "auprc": 0.6872954466053431,
+      "threshold": 0.11784056574106216,
+      "pairs": 2986
+    }
+  },
+  "transfer_side0.5_k5": {
+    "validation": {
+      "accuracy": 0.6473543201607501,
+      "auroc": 0.6838788649329826,
+      "auprc": 0.7037530547464055,
+      "threshold": 0.10222884267568588,
+      "pairs": 2986
+    }
+  },
+  "transfer_side0.5_k20": {
+    "validation": {
+      "accuracy": 0.6831882116543871,
+      "auroc": 0.730302698594782,
+      "auprc": 0.7466080085596449,
+      "threshold": 0.15126453340053558,
+      "pairs": 2986
+    }
+  },
+  "transfer_side0.5_k50": {
+    "validation": {
+      "accuracy": 0.6929002009377093,
+      "auroc": 0.7454089165379496,
+      "auprc": 0.751983961803423,
+      "threshold": 0.15097910165786743,
+      "pairs": 2986
+    }
+  },
+  "transfer_side1.0_k5": {
+    "validation": {
+      "accuracy": 0.6640991292699263,
+      "auroc": 0.7024174883548994,
+      "auprc": 0.7158054156879128,
+      "threshold": 0.1260579228401184,
+      "pairs": 2986
+    }
+  },
+  "transfer_side1.0_k20": {
+    "validation": {
+      "accuracy": 0.6929002009377093,
+      "auroc": 0.7490508284026057,
+      "auprc": 0.7556435047996651,
+      "threshold": 0.16984772682189941,
+      "pairs": 2986
+    }
+  },
+  "transfer_side1.0_k50": {
+    "validation": {
+      "accuracy": 0.6888814467515071,
+      "auroc": 0.7460333980993687,
+      "auprc": 0.7516871314083463,
+      "threshold": 0.15198515355587006,
+      "pairs": 2986
+    }
+  }
+}

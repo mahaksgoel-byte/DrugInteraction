@@ -1,4 +1,4 @@
-# Starting point for the structure-only pair baseline. Values are also the
+# Starting point for the molecular + side-information pair baseline. Values are also the
 # defaults accepted by src/backbone/train_pairs.py.
 dataset:
   benchmark: DDInter
@@ -7,7 +7,7 @@ dataset:
   feature_file: cache/features/morgan_r2_2048.npz
 model:
   name: symmetric_pair_head
-  drug_feature_dim: 2048
+  drug_feature_dim: 3592  # Morgan 2048 + SIDER 1025 + ClinPGx 519 in current cache
   width: 128
   dropout: 0.2
 optimizer:
@@ -15,7 +15,11 @@ optimizer:
   learning_rate: 0.001
   batch_size: 512
 training:
-  epochs: 50
+  epochs: 100
+  patience: 12
   early_stopping_metric: validation_auprc
   checkpoint: best.pt
-metrics: [auprc, auroc]
+  scheduler: ReduceLROnPlateau
+  gradient_clip_norm: 5.0
+  decision_threshold: validation_youden_j
+metrics: [auprc, auroc, accuracy, balanced_accuracy, precision, recall, f1]

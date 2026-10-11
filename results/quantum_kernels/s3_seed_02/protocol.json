@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "split": "C:\\MehakDS\\DrugInteraction\\data\\splits\\S3\\seed_02",
+  "seed": 0,
+  "checkpoint": "C:\\MehakDS\\DrugInteraction\\results\\ddinter\\s3_seed_02_regularization_final",
+  "checkpoint_sha256": "477347207a806705d4149f39318014342a0ed885ed1e1c7f7f40310ab9b210ca",
+  "features_sha256": "af8e107ac9e33ac7a2a232582319b6bc6aa5764990a564983143c384c0c3b0c8",
+  "training_pairs": 1024,
+  "validation_pairs": 2986,
+  "representation": "Frozen feature MLP encoder; train-drug PCA and scaling",
+  "encoder_training_pairs": "full original training fold; all arms share this encoder",
+  "pca_variance": 0.8977169394493103,
+  "quantum_backend": "Qiskit Statevector",
+  "qiskit_version": "1.4.5",
+  "test_evaluation": "full fold after validation-only selection",
+  "split_hashes": {
+    "train": "fcaf60062058a7ae15cc3bbdebdfe5b40e0291be8e4040bdc2e2fa4ef7a3415c",
+    "val": "56fab63719395ac1e196eff89fd53fa9c3948d29511aa8e0a057f1b4b8a7e51b",
+    "test": "493d9080257bd043cc85fbba756f575751b9603efa5aedd48e83b8ba74c0458b"
+  },
+  "split_seed": 2,
+  "encoder_seed": 0,
+  "sampling_seed": 0,
+  "feature_file": "C:\\MehakDS\\DrugInteraction\\cache\\features\\morgan_r2_2048.npz",
+  "metadata_note": "Explicit seed roles added after completion; original seed field denotes encoder and head sampling seed. Metrics unchanged."
+}

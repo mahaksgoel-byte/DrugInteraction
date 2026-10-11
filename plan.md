@@ -1,5 +1,145 @@
 # Substrate or Structure? Classical vs Quantum Heads for Drug-Drug Interaction Prediction
-### Final end-to-end project plan (data collection → final results)
+### Research specification and implementation status
+
+## Delivery status — 11 October 2026
+
+### Accuracy improvement extension
+
+The next implemented experiment is `src/backbone/improve_s3.py`:
+six histogram-gradient-boosting configurations plus nine training-graph
+similarity-transfer configurations, evaluated on S3 validation seeds 0, 1 and 2.
+It uses every training pair, rather than the 1,024-pair quantum head budget.
+The feature views contain 77 compact or 165 selected values per drug, including
+19 RDKit chemical descriptors. Training-only SVD/variance selection, symmetric
+pair construction, shallow trees, minimum leaf size 80, L2 regularization 10
+and validation checkpointing address unnecessary complexity. Every 25-tree
+checkpoint is logged; these are boosting rounds, not neural epochs.
+
+The explicit selection metric for this accuracy-focused extension is mean
+validation accuracy, with AUPRC as tie-break. This differs from earlier
+AUPRC-selected neural and quantum experiments. `src/backbone/ensemble_s3.py`
+compares pre-recorded averages and tree/transfer blends using only validation
+predictions. The selected configuration and thresholds are saved before its
+test evaluation. The historical test cohorts have already been reported:
+this is exploratory improvement, not a new independent confirmation.
+
+The UI's Training section contains these results, all checkpoints, dataset
+coverage, chemical novelty, feature-group sensitivity and error slices. Prior
+neural epochs and quantum comparisons remain separately identified.
+
+**Completed result:** validation selected a 75% tree / 25% similarity rank
+blend. The tree uses the compact feature view and at most 31 leaves; the
+transfer arm mixes chemistry/SIDER equally with 50 neighbors. S3 test accuracy
+is **65.41%, 66.54%, 65.99%** for seeds 0/1/2 (mean **65.98%**). Validation
+accuracy is **70.78%, 67.09%, 71.50%**; training accuracy is **74.50%, 73.06%,
+71.65%**. The gaps remain and zero overfitting is not established. The 70–85%
+test target has **not** been reached. These results improve on the three current
+shared neural checkpoints (61.98%, 66.40%, 63.22%), whose configurations differ
+by cohort; this is not a universal or controlled architectural superiority claim.
+
+All 45 base configuration/cohort trials and 18 ensemble/cohort validation
+comparisons are retained. The selected recipe is shown even though the single
+tree is slightly better on seed 0 test: test performance did not choose the
+recipe. Error slices show lower accuracy for low-similarity drugs on every
+cohort. These slices describe results and were not used for further tuning.
+Artifacts: `results/cold_start_improvement/validation_trees_transfer_v1/`.
+Targeted verification covers four UI sections, all quantum report selections,
+both prediction replays, kernel properties and the new pair/transfer invariants.
+
+```powershell
+.\.quantum-venv\Scripts\python.exe -m src.backbone.improve_s3 --output-dir results/cold_start_improvement/my_new_run
+.\.quantum-venv\Scripts\python.exe -m src.backbone.ensemble_s3 results/cold_start_improvement/my_new_run
+```
+
+The local Streamlit demonstration is implemented. The original publication-scale
+research specification below is **not complete**. This status records delivered
+evidence and preserves the outstanding requirements; it does not redefine a
+feature MLP as a heterogeneous GNN or a simulation as quantum hardware.
+
+| Deliverable | Current evidence / remaining work |
+|---|---|
+| Four sidebar sections | Preprocessing, Training, Classical vs Quantum, Project roadmap |
+| Dashboard repair | Legacy reports without accuracy display safely; supported Streamlit width arguments; actual AppTest rendering of every section |
+| Epoch records | Saved neural histories and earlier four-qubit variational histories; best checkpoint and early stopping explained |
+| Shared representation | Frozen feature MLP, training-drug PCA and scaling; four summary values per drug |
+| Matched kernel comparison | Nine validation trials each for RBF SVM and real Qiskit eight-qubit fidelity SVM; same 1,024 training pairs; entire validation/test folds |
+| Additional controls | Logistic floor and matched removal of cross-register entanglers |
+| Auditability | Checkpoint/feature/split hashes, sampled pair files, selected models, every trial, immediate JSONL progress and every test prediction |
+| Quantum diagnostics | Swap invariance, PSD/unit diagonal, inverse-circuit overlap test, register entropy, classical surrogate, finite-shot and global-depolarization sensitivity |
+| Calibration | Platt scaling fitted on 512 validation pairs; full-test Brier and ten-bin calibration error |
+| Demonstration | Replay saved held-out predictions, inspect circuit and trials, download report/predictions; no mock outputs |
+| Unfinished original scope | Mapped drug mechanism data, licensed second benchmark, heterogeneous GNN gate, all six arms, matched capacity/data/qubit sweeps, variational trainability, device-specific noise, ten-seed matrix, external validation and statistical equivalence |
+
+### How to demonstrate the completed implementation
+
+From `C:\MehakDS\DrugInteraction` run:
+
+```powershell
+.\.quantum-venv\Scripts\python.exe -m streamlit run training_app.py
+```
+
+1. **Preprocessing:** inspect source coverage and the existing data audit.
+2. **Training:** select any saved run and inspect its complete epoch history,
+   validation-selected checkpoint and test metrics. Missing historical metrics
+   are marked missing, never invented.
+3. **Classical vs Quantum:** inspect the cohort table, select a completed kernel
+   run, replay a test pair, inspect circuit diagnostics and all validation trials,
+   and expand noise, imitation and calibration. The older variational pilot and
+   its epochs remain in their own archive.
+4. **Project roadmap:** distinguish completed implementation from missing
+   research evidence. S1 uses familiar drugs, S2 one unseen drug, S3 two unseen
+   drugs. Current kernel comparisons use S3.
+
+### Interpretation and reproducibility
+
+Completed S3 runs use 7,866 / 8,628 / 9,768 test pairs respectively:
+
+| Split seed | Classical RBF accuracy | Quantum accuracy | Logistic accuracy | Quantum minus RBF |
+|---|---:|---:|---:|---:|
+| 0 | 61.07% | 61.70% | 61.72% | +0.62 points |
+| 1 | 66.13% | 66.96% | 65.29% | +0.82 points |
+| 2 | 62.92% | 62.88% | 63.42% | -0.04 points |
+
+Mean accuracy is 63.84% quantum, 63.38% RBF, 63.48% logistic.
+The quantum AUPRC exceeds RBF on each of these cohorts, but accuracy does not.
+The 70% and 80–85% S3 targets were not reached. Removing cross-register
+entanglers scores 61.63%, 67.00%, 62.89%: entanglement has no consistent benefit.
+The classical surrogate explains approximately 99.3%, 89.5%, 99.7% of variation
+in the quantum validation scores. This is evidence against a strong claim of
+classically inaccessible behavior. Finite-shot sensitivity can be substantial.
+
+Artifacts: `results/quantum_kernels/s3_seed_00_current_features`,
+`s3_seed_01`, and `s3_seed_02`. Each contains its full report and diagnostics.
+The shared neural encoders completed 7, 38 and 9 epochs, with best checkpoints
+at epochs 1, 26 and 1. Seed 0 was retrained after discovering that an old
+checkpoint's recorded feature archive had changed from 3,073 to 3,592 columns;
+the rejected attempt has a failure record. No feature truncation was used.
+
+Classical and quantum heads share a frozen neural encoder. The classical head
+computes ordinary nonlinear similarities; the quantum head computes overlaps of
+Qiskit circuit states. Both use a classical SVM optimizer. Circuits run on the
+local CPU simulator. This demonstrates quantum algorithms, not hardware speedup.
+Solver iterations are documented as iterations, not fabricated neural epochs.
+
+Each cohort selects its encoder and head on validation data, so the result is
+exploratory. The three cohorts overlap and are not independent replications.
+No configurations or thresholds are selected using kernel test scores. A new
+untouched benchmark is needed before a final superiority or SOTA claim. Unlisted
+DDInter pairs are sampled unlabeled examples, not proven non-interactions.
+Noise tests use one seeded realization and simplified assumptions; hardware
+noise, readout errors and retraining with noisy kernels remain outstanding.
+
+Commands for a fresh comparison (use a new output directory), diagnostics and
+targeted verification:
+
+```powershell
+.\.quantum-venv\Scripts\python.exe -m src.backbone.quantum_kernel --checkpoint-dir results/ddinter/s3_seed_02_regularization_final --output-dir results/quantum_kernels/my_new_run --cap 1024
+.\.quantum-venv\Scripts\python.exe -m src.analysis.quantum_diagnostics results/quantum_kernels/my_new_run
+.\.quantum-venv\Scripts\python.exe -m unittest tests.test_dashboard tests.test_quantum_kernel -v
+```
+
+The original requirements follow. Unchecked items remain research work, including
+items that can be coded locally; missing licensed data is not the only gap.
 
 
 ---
@@ -17,7 +157,7 @@
 | N3 | **2×2 factorial design:** {classical, quantum} × {generic head, pair-structured head} to separate substrate from inductive bias | Step 6 |
 | N4 | **Kernel arms:** RBF-SVM vs fidelity quantum-kernel SVM on the same features | Step 6 |
 | N5 | **Parameter-matched capacity sweeps** (performance vs parameter count, not a single matched point) | Step 7 |
-| N6 | **Strict cold-start evaluation** (unseen drugs) with leakage-free graphs and degree-matched negatives | Steps 3–4 |
+| N6 | **Strict cold-start evaluation** (unseen drugs) with leakage-free graphs and label-independent unlabeled sampling | Steps 3–4 |
 | N7 | **Data-efficiency curves** (1% → 100% training data) testing the "quantum helps in low data" claim | Step 8 |
 | N8 | **Qubit-scaling study** (8 / 10 / 12 qubits vs matched classical) | Step 8 |
 | N9 | **Entanglement ablation + entanglement entropy** across the A\|B cut | Step 9 |
@@ -118,8 +258,8 @@ Generate **10 split seeds per setting**, 70/10/20 (train/val/test), and save ind
 ### 3.2 Negatives
 
 1. DrugBank provides only positives, so sample negatives from unlisted pairs.
-2. **Primary:** 1:1 ratio, **degree-matched** (negatives drawn so each drug's positive/negative count is balanced, preventing popularity shortcuts).
-3. **Sensitivity:** 1:5 ratio.
+2. **Primary:** 1:1 ratio, sampled uniformly without replacement from legal cohort pairs. Do not use held-out positive degrees to construct validation/test negatives.
+3. **Sensitivity:** 1:5 ratio and a separately reported training-degree-stratified variant where degree is observable at prediction time.
 4. Acknowledge false negatives (an unlisted pair is not proven non-interacting).
 5. **Shortcut check:** train a degree-only model. If it scores well above chance, redo negative sampling.
 
@@ -168,6 +308,19 @@ Generate **10 split seeds per setting**, 70/10/20 (train/val/test), and save ind
 ---
 
 ## 6. Heads: the 2×2 design plus kernel arms (N2, N3, N4)
+
+**Implementation note (2026-10):** a preliminary Qiskit Statevector VQC versus
+logistic-regression comparison now runs on capped molecular feature pairs and
+is exposed in the dashboard. It is an exploratory circuit/software check only:
+it does not use the planned frozen GNN embeddings, does not implement the Q-S
+two-register design, and does not complete the six-arm experiment below.
+
+The subsequent eight-qubit kernel implementation in `src/backbone/quantum_kernel.py`
+does provide two registers, symmetric state-mixture overlaps, a matched RBF
+comparison, cross-register ablation and a frozen **feature MLP** fork. It is
+Q-K-style exploratory evidence; it does not implement the trainable Q-S ansatz
+or satisfy the planned GNN-based six-arm design. Its current head sample is
+1,024 pairs, below the 5–10k research target below.
 
 ### 6.1 Arm definitions
 
@@ -363,7 +516,7 @@ One row per run in `results/`: arm, setting, dataset, seed, data fraction, qubit
 | Backbone underperforms published baselines | Simplify (drop pretraining first) or use a pretrained molecular encoder; do not proceed until the gate passes |
 | Quantum training unstable / barren plateaus | Small learning rates, near-identity initialization, shallow depth, gradient-variance monitoring |
 | Quantum simulation too slow | Batched PyTorch statevector simulator; subsample for kernel arms |
-| Negatives leak popularity | Degree-matched sampling plus degree-only shortcut baseline |
+| Negative sampling leaks held-out label information or popularity | Label-independent cohort sampling, report sampling rule, and degree-only shortcut baseline |
 | Quantum and classical tie | Expected; TOST equivalence testing and the simulability analysis make a tie an informative result |
 | Frozen backbone biases results toward simple heads | End-to-end confound experiment (Step 5.7) |
 | Hardware access unavailable | Rely on noise simulation and say so explicitly |
@@ -373,7 +526,13 @@ One row per run in `results/`: arm, setting, dataset, seed, data fraction, qubit
 ## 15. Definition of done
 
 - [ ] Frozen protocol committed before experiments
-- [ ] Leakage tests pass for S1/S2/S3
+- [x] DDInter pair/cohort split-integrity audit passes for all 30 generated S1/S2/S3 split files
+- [x] Preliminary Qiskit statevector versus logistic pilot runs saved on capped S3 samples; this does not satisfy the planned six-arm/frozen-backbone quantum comparison
+- [x] Eight-qubit Qiskit kernel and matched classical controls implemented with full-fold evaluation and saved predictions
+- [x] Kernel swap symmetry, PSD, inverse-circuit fidelity and entanglement tests
+- [x] Kernel surrogate, simplified noise and validation-fitted calibration diagnostics implemented
+- [x] Dashboard legacy-schema repair and four-section rendering regression coverage
+- [ ] Graph-specific leakage tests (blocked until a heterogeneous graph backbone exists)
 - [ ] Backbone gate passed
 - [ ] Q-S symmetry test passes to 1e-6
 - [ ] All six arms plus floors and ablations run on 2 datasets × 3 settings × 10 seeds

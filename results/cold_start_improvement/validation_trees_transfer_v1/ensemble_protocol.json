@@ -1,0 +1,11 @@
+{
+  "recipes": [
+    "best single candidate",
+    "mean of all six boosted-tree candidates",
+    "mean of top three boosted-tree candidates by mean validation accuracy",
+    "rank blend of best tree and best transfer at tree weights .25/.5/.75"
+  ],
+  "selection": "mean validation accuracy; AUPRC tie-break; no test-based choices",
+  "rank_transform": "CDF fitted on each model validation scores; same transform applied to test",
+  "limits": "Exploratory reuse of validation and historical test cohorts; no independent confirmation"
+}

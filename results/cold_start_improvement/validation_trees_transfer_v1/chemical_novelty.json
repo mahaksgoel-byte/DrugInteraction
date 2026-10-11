@@ -1,0 +1,23 @@
+[
+  {
+    "seed": 0,
+    "validation_drugs": 147,
+    "nearest_training_morgan_tanimoto_median": 0.47560975609756095,
+    "validation_drugs_below_0.3_similarity": 37,
+    "validation_drugs_above_0.8_similarity": 12
+  },
+  {
+    "seed": 1,
+    "validation_drugs": 147,
+    "nearest_training_morgan_tanimoto_median": 0.4642857142857143,
+    "validation_drugs_below_0.3_similarity": 35,
+    "validation_drugs_above_0.8_similarity": 12
+  },
+  {
+    "seed": 2,
+    "validation_drugs": 147,
+    "nearest_training_morgan_tanimoto_median": 0.48258706467661694,
+    "validation_drugs_below_0.3_similarity": 33,
+    "validation_drugs_above_0.8_similarity": 13
+  }
+]

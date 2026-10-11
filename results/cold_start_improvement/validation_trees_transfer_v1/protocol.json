@@ -1,0 +1,17 @@
+{
+  "selection": "mean validation accuracy over all listed cohorts; AUPRC tie-break",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "max_boosting_rounds": 200,
+  "feature_sha256": "af8e107ac9e33ac7a2a232582319b6bc6aa5764990a564983143c384c0c3b0c8",
+  "threshold": "validation Youden J; balanced cohorts make this accuracy-maximizing",
+  "test_access": "after every cohort validation trial and final selection file is saved",
+  "limits": [
+    "Historical test cohorts previously reported; exploratory, not independent confirmation.",
+    "Unlisted pairs are not verified negatives. Transfer treats absent training edges as zero evidence.",
+    "Only train and validation data influence model selection. Cohorts overlap."
+  ]
+}

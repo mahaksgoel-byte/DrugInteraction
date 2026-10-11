@@ -1,0 +1,63 @@
+{
+  "drugs": 1487,
+  "raw_features": 3592,
+  "constant_columns": 4,
+  "sider_coverage": 858,
+  "pgx_coverage": 337,
+  "descriptor_names": [
+    "MolWt",
+    "MolLogP",
+    "TPSA",
+    "NumHDonors",
+    "NumHAcceptors",
+    "NumRotatableBonds",
+    "RingCount",
+    "NumAromaticRings",
+    "FractionCSP3",
+    "HeavyAtomCount",
+    "NHOHCount",
+    "NOCount",
+    "NumAliphaticRings",
+    "NumSaturatedRings",
+    "LabuteASA",
+    "BalabanJ",
+    "BertzCT",
+    "MolMR",
+    "NumHeteroatoms"
+  ],
+  "cohorts": [
+    {
+      "seed": 0,
+      "train_pairs": 126998,
+      "validation_pairs": 2036,
+      "train_drugs": 1035,
+      "validation_drugs": 147,
+      "train_sider_coverage": 0.5748792290687561,
+      "validation_sider_coverage": 0.5782312750816345,
+      "train_pgx_coverage": 0.23091787099838257,
+      "validation_pgx_coverage": 0.1972789168357849
+    },
+    {
+      "seed": 1,
+      "train_pairs": 120458,
+      "validation_pairs": 2452,
+      "train_drugs": 1035,
+      "validation_drugs": 147,
+      "train_sider_coverage": 0.5835748910903931,
+      "validation_sider_coverage": 0.5646258592605591,
+      "train_pgx_coverage": 0.2222222238779068,
+      "validation_pgx_coverage": 0.25170066952705383
+    },
+    {
+      "seed": 2,
+      "train_pairs": 112566,
+      "validation_pairs": 2986,
+      "train_drugs": 1035,
+      "validation_drugs": 147,
+      "train_sider_coverage": 0.5903381705284119,
+      "validation_sider_coverage": 0.5306122303009033,
+      "train_pgx_coverage": 0.22028985619544983,
+      "validation_pgx_coverage": 0.2380952388048172
+    }
+  ]
+}

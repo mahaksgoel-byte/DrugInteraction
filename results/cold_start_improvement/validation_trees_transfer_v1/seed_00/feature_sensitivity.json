@@ -1,0 +1,18 @@
+[
+  {
+    "group": "chemistry",
+    "validation_auroc_drop": 0.03395270205070988
+  },
+  {
+    "group": "side effects",
+    "validation_auroc_drop": 0.0471396976235231
+  },
+  {
+    "group": "pharmacogenomics",
+    "validation_auroc_drop": 0.05471744357942099
+  },
+  {
+    "group": "chemical descriptors",
+    "validation_auroc_drop": 0.05362512110112283
+  }
+]

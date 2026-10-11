@@ -1,0 +1,86 @@
+{
+  "selection_metric": "validation_auprc",
+  "test_evaluated": false,
+  "best_config": {
+    "width": 64,
+    "learning_rate": 0.001,
+    "dropout": 0.35,
+    "weight_decay": 0.01,
+    "best_epoch": 1,
+    "validation": {
+      "auroc": 0.7469544186781,
+      "auprc": 0.7572012851883014,
+      "accuracy": 0.6848626925653047,
+      "accuracy_at_0_5": 0.6784996651038178,
+      "balanced_accuracy": 0.6848626925653047,
+      "threshold": 0.44667041301727295
+    },
+    "trial_dir": "trial_02_w64_lr0p001_d0p35_wd0p01"
+  },
+  "trials": [
+    {
+      "width": 64,
+      "learning_rate": 0.001,
+      "dropout": 0.35,
+      "weight_decay": 0.01,
+      "best_epoch": 1,
+      "validation": {
+        "auroc": 0.7469544186781,
+        "auprc": 0.7572012851883014,
+        "accuracy": 0.6848626925653047,
+        "accuracy_at_0_5": 0.6784996651038178,
+        "balanced_accuracy": 0.6848626925653047,
+        "threshold": 0.44667041301727295
+      },
+      "trial_dir": "trial_02_w64_lr0p001_d0p35_wd0p01"
+    },
+    {
+      "width": 64,
+      "learning_rate": 0.001,
+      "dropout": 0.2,
+      "weight_decay": 0.01,
+      "best_epoch": 6,
+      "validation": {
+        "auroc": 0.7263092915409217,
+        "auprc": 0.753412552135309,
+        "accuracy": 0.6885465505693235,
+        "accuracy_at_0_5": 0.6872069658405894,
+        "balanced_accuracy": 0.6885465505693236,
+        "threshold": 0.48231813311576843
+      },
+      "trial_dir": "trial_01_w64_lr0p001_d0p2_wd0p01"
+    },
+    {
+      "width": 128,
+      "learning_rate": 0.001,
+      "dropout": 0.2,
+      "weight_decay": 0.01,
+      "best_epoch": 9,
+      "validation": {
+        "auroc": 0.7219834557248405,
+        "auprc": 0.7430911681927383,
+        "accuracy": 0.680509042196919,
+        "accuracy_at_0_5": 0.674146014735432,
+        "balanced_accuracy": 0.6805090421969189,
+        "threshold": 0.37814679741859436
+      },
+      "trial_dir": "trial_03_w128_lr0p001_d0p2_wd0p01"
+    },
+    {
+      "width": 128,
+      "learning_rate": 0.001,
+      "dropout": 0.35,
+      "weight_decay": 0.01,
+      "best_epoch": 1,
+      "validation": {
+        "auroc": 0.7173911385528089,
+        "auprc": 0.7386937480330213,
+        "accuracy": 0.6697923643670463,
+        "accuracy_at_0_5": 0.6647689216342934,
+        "balanced_accuracy": 0.6697923643670463,
+        "threshold": 0.32940682768821716
+      },
+      "trial_dir": "trial_04_w128_lr0p001_d0p35_wd0p01"
+    }
+  ]
+}

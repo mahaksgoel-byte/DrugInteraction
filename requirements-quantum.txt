@@ -1,0 +1,5 @@
+# Install into the .quantum-venv environment described in README.md.
+# These versions retain compatibility with this project's Python 3.10 and PyTorch build.
+numpy==1.26.4
+pandas==2.2.3
+qiskit==1.4.5

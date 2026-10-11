@@ -1,0 +1,5 @@
+{
+  "status": "stopped before fitting heads",
+  "reason": "Historical checkpoint expected 3073 input features; recorded archive had changed to 3592. No truncation or fabricated result.",
+  "resolution": "New encoder trained with current features; see s3_seed_00_current_features."
+}

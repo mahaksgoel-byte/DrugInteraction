@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "split": "C:\\MehakDS\\DrugInteraction\\data\\splits\\S3\\seed_00",
+  "split_seed": 0,
+  "encoder_seed": 0,
+  "sampling_seed": 0,
+  "checkpoint": "C:\\MehakDS\\DrugInteraction\\results\\ddinter\\s3_seed_00_quantum_shared_encoder",
+  "checkpoint_sha256": "c4116ac75a896b6f83703189492ec81e0cfdbde2cad902d533a16b118e830a69",
+  "feature_file": "C:\\MehakDS\\DrugInteraction\\cache\\features\\morgan_r2_2048.npz",
+  "features_sha256": "af8e107ac9e33ac7a2a232582319b6bc6aa5764990a564983143c384c0c3b0c8",
+  "training_pairs": 1024,
+  "validation_pairs": 2036,
+  "representation": "Frozen feature MLP encoder; train-drug PCA and scaling",
+  "encoder_training_pairs": "full original training fold; all arms share this encoder",
+  "pca_variance": 0.8891484141349792,
+  "quantum_backend": "Qiskit Statevector",
+  "qiskit_version": "1.4.5",
+  "test_evaluation": "full fold after validation-only selection",
+  "split_hashes": {
+    "train": "b5418decc3a7411e2b5292c758cdc9878d51bb278da134c7935778df07d484c6",
+    "val": "8519778f80c34ccdc7cd740f6b7cd118dd04617f17559122df5c4915a545c2d4",
+    "test": "dadd4ea45b6821fcc090993d0eec9cafa60ff99b7882d86d7c8393fcb269355f"
+  }
+}
