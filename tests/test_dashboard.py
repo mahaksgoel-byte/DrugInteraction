@@ -8,6 +8,14 @@ class DashboardTests(unittest.TestCase):
     def test_sections_and_legacy_report(self):
         app = AppTest.from_file(str(Path(__file__).resolve().parents[1] / 'training_app.py'), default_timeout=90).run()
         self.assertFalse(list(app.exception), [e.message for e in app.exception])
+        archive = app.selectbox(key='epoch_archive_run')
+        accuracy_runs = [option for option in archive.options if '_seed_00_' in option and '_accuracy\\trial_01_' in option]
+        self.assertEqual(len(accuracy_runs), 6)
+        archive.set_value(next(option for option in accuracy_runs if option.startswith('s3_seed_00_quantum_accuracy\\'))).run()
+        self.assertFalse(list(app.exception), [e.message for e in app.exception])
+        measured = next(option for option in archive.options if option not in accuracy_runs)
+        app.selectbox(key='epoch_archive_run').set_value(measured).run()
+        self.assertFalse(list(app.exception), [e.message for e in app.exception])
         replay=[x for x in app.number_input if x.label=='Improvement test pair row']
         if replay:
             replay[0].set_value(1).run()

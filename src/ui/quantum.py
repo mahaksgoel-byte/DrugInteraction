@@ -7,7 +7,34 @@ import pandas as pd
 import streamlit as st
 
 
+def render_requested_accuracy_log(root: Path) -> None:
+    path = root / 'logs' / 'ui_accuracy_training_log.json'
+    if not path.exists():
+        return
+    log = json.loads(path.read_text(encoding='utf-8'))
+    with st.expander('Requested training accuracy log', expanded=True):
+        st.caption('Generated example data for UI review. No model was trained for these runs.')
+        split = st.selectbox('Split', ['S1', 'S2', 'S3'], key='requested_accuracy_split')
+        selected_series = [series for series in log['series'] if series['split'] == split]
+        comparison = pd.DataFrame([
+            {'Epoch': point['epoch'], 'Model': series['model'],
+             'Training accuracy': point['train_accuracy']}
+            for series in selected_series for point in series['history']
+        ])
+        st.line_chart(comparison.pivot(index='Epoch', columns='Model', values='Training accuracy'))
+        model = st.selectbox('Model', [series['model'] for series in selected_series], key='requested_accuracy_model')
+        series = next(item for item in selected_series if item['model'] == model)
+        st.caption(f"Run ID {series['run_id']} | {series['epochs']} epochs")
+        hist = pd.DataFrame(series['history'])
+        st.line_chart(hist.set_index('epoch')[["train_loss", "val_loss", "val_auprc", "val_accuracy"]])
+        metric_columns = ["train_accuracy", "train_loss", "val_loss", "val_auprc", "val_auroc", "val_accuracy", "val_accuracy_at_0_5", "val_balanced_accuracy", "val_matthews_correlation", "val_brier_score", "val_expected_calibration_error_10_bins", "decision_threshold", "learning_rate", "elapsed_seconds"]
+        st.dataframe(hist[metric_columns], width='stretch', hide_index=True)
+        st.download_button('Download generated log', path.read_text(encoding='utf-8'),
+                           file_name=path.name, mime='application/json')
+
+
 def render(root: Path):
+    render_requested_accuracy_log(root)
     st.subheader('Quantum kernels with learned drug summaries')
     st.write('The first pilot discarded most input variation and used tiny test samples. This experiment uses the existing trained drug encoder as a shared starting point, then evaluates every pair in the chosen validation and test folds.')
     st.info('Execution uses real Qiskit circuits on the local exact statevector simulator. Quantum hardware and a quantum speed advantage have not been demonstrated.')

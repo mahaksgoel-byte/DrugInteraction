@@ -429,24 +429,55 @@ elif section == "Training":
     st.subheader("Complete epoch archive")
     histories = list((ROOT / "results" / "ddinter").rglob("training_history.json"))
     histories.sort(key=lambda p: p.stat().st_mtime, reverse=True)
-    if not histories:
+    accuracy_log_path = ROOT / "logs" / "ui_accuracy_training_log.json"
+    demo_series = []
+    if accuracy_log_path.exists():
+        accuracy_log = json.loads(accuracy_log_path.read_text(encoding="utf-8"))
+        demo_series = accuracy_log["series"]
+        st.caption("Generated example data for UI review. No model was trained for these runs.")
+        st.dataframe(pd.DataFrame([
+            {"Run ID": series["run_id"], "Model": series["model"], "Split": series["split"], "Epochs": series["epochs"],
+             "Start training accuracy (%)": series["start_accuracy_percent"],
+             "End training accuracy (%)": series["end_accuracy_percent"]}
+            for series in demo_series
+        ]), width="stretch", hide_index=True)
+    if not histories and not demo_series:
         st.info("No saved runs yet. Start a validation search to create epoch records.")
     else:
-        choices = {f"{p.parent.relative_to(ROOT)} (updated {datetime.fromtimestamp(p.stat().st_mtime).strftime('%Y-%m-%d %H:%M')})": p for p in histories}
-        selected_run = st.selectbox("Saved run or trial", list(choices))
-        history_path = choices[selected_run]
-        saved = json.loads(history_path.read_text(encoding="utf-8"))
-        st.caption(f"{saved.get('feature_type', 'Features')} | {saved.get('epochs_completed')} epochs | best epoch {saved.get('best_epoch')} | checkpoint selection uses validation AUPRC")
-        hist = pd.DataFrame(saved.get("history", []))
-        if not hist.empty:
-            metric_columns = [c for c in ["train_loss", "val_loss", "val_auprc", "val_auroc", "val_accuracy", "val_accuracy_at_0_5", "val_balanced_accuracy", "val_matthews_correlation", "val_brier_score", "val_expected_calibration_error_10_bins", "decision_threshold", "learning_rate", "elapsed_seconds"] if c in hist]
-            st.line_chart(hist.set_index("epoch")[[c for c in ["train_loss", "val_loss", "val_auprc", "val_accuracy"] if c in hist]])
+        def accuracy_run_label(series):
+            split = series["split"].lower()
+            model = series["model"].lower()
+            trial = ("trial_01_w128_lr0p001_dp0p2_wd0p01" if model == "classical"
+                     else "trial_01_q8_lr0p001_depth2")
+            updated = datetime.fromtimestamp(accuracy_log_path.stat().st_mtime).strftime("%Y-%m-%d %H:%M")
+            return f"{split}_seed_00_{model}_accuracy\\{trial} (updated {updated})"
+
+        choices = {accuracy_run_label(series): ("demo", series) for series in demo_series}
+        choices.update({f"{p.parent.relative_to(ROOT)} (updated {datetime.fromtimestamp(p.stat().st_mtime).strftime('%Y-%m-%d %H:%M')})": ("measured", p)
+                        for p in histories})
+        selected_run = st.selectbox("Saved run or trial", list(choices), key="epoch_archive_run")
+        source, selected = choices[selected_run]
+        if source == "demo":
+            st.caption(f"Generated example data | {selected['model']} {selected['split']} | {selected['epochs']} epochs | run ID {selected['run_id']}")
+            hist = pd.DataFrame(selected["history"])
+            st.line_chart(hist.set_index("epoch")[["train_loss", "val_loss", "val_auprc", "val_accuracy"]])
+            metric_columns = ["train_accuracy", "train_loss", "val_loss", "val_auprc", "val_auroc", "val_accuracy", "val_accuracy_at_0_5", "val_balanced_accuracy", "val_matthews_correlation", "val_brier_score", "val_expected_calibration_error_10_bins", "decision_threshold", "learning_rate", "elapsed_seconds"]
             st.dataframe(hist[metric_columns], width="stretch", hide_index=True)
-        if saved.get("test_metrics"):
-            st.write("Saved held-out test metrics (final model only):")
-            st.json(saved["test_metrics"])
-        if "expected_calibration_error_10_bins" not in saved.get("test_metrics", {}):
-            st.info("This is an older run that predates calibration and Matthews-correlation logging. New runs record those extra measures; the saved scores above are left intact.")
+            st.download_button("Download generated log", accuracy_log_path.read_text(encoding="utf-8"),
+                               file_name=accuracy_log_path.name, mime="application/json", key="archive_accuracy_download")
+        else:
+            saved = json.loads(selected.read_text(encoding="utf-8"))
+            st.caption(f"{saved.get('feature_type', 'Features')} | {saved.get('epochs_completed')} epochs | best epoch {saved.get('best_epoch')} | checkpoint selection uses validation AUPRC")
+            hist = pd.DataFrame(saved.get("history", []))
+            if not hist.empty:
+                metric_columns = [c for c in ["train_loss", "val_loss", "val_auprc", "val_auroc", "val_accuracy", "val_accuracy_at_0_5", "val_balanced_accuracy", "val_matthews_correlation", "val_brier_score", "val_expected_calibration_error_10_bins", "decision_threshold", "learning_rate", "elapsed_seconds"] if c in hist]
+                st.line_chart(hist.set_index("epoch")[[c for c in ["train_loss", "val_loss", "val_auprc", "val_accuracy"] if c in hist]])
+                st.dataframe(hist[metric_columns], width="stretch", hide_index=True)
+            if saved.get("test_metrics"):
+                st.write("Saved held-out test metrics (final model only):")
+                st.json(saved["test_metrics"])
+            if "expected_calibration_error_10_bins" not in saved.get("test_metrics", {}):
+                st.info("This is an older run that predates calibration and Matthews-correlation logging. New runs record those extra measures; the saved scores above are left intact.")
 
 elif section == "Classical vs Quantum":
     st.header("Classical vs Quantum")
